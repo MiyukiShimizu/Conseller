@@ -1,0 +1,81 @@
+.title{
+	font-size: 150%;
+	font-weight: bold;
+	border-bottom: 1px solid #cccccc;
+	width: 90%;
+/* どうして、線が真ん中に来ないのだろう？ */
+    text-align: center;
+}
+
+table{
+    width: 100%;
+    border-spacing: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+table th{
+    border-bottom: solid 2px #fb5144;
+    border-right: 1px solid #bbb;
+    padding: 10px 0;
+  }
+ 
+/* なんでスクロールバーが出ないのだろう。 */
+table td{
+    border-bottom: solid 2px #ddd;
+    border-right: 1px solid #bbb;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+
+.btn-update{
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  background: white;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-update:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+.btn-delete{
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #FF7366;
+  background: white;
+  border: solid 2px #FF7366;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-delete:hover {
+  background: #FF7366;
+  color: white;
+}
+
+.form_submit_button{
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color:#1D809F;
+  background: #1D809F;
+  border: solid 2px #1D809F;
+  border-radius: 3px;
+  transition: .4s;
+  color: white;
+}
+
+.form_submit_button:hover {
+  background: #155d74;
+  border-color: #155d74;
+  color: white;
+}
+
