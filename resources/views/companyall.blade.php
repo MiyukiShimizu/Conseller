@@ -1,6 +1,7 @@
 <h1 class="title">企業一覧</h1>
 <link href="css/companyall.css" rel="stylesheet" type="text/css"> 
 
+<div style="height:600px; width:auto; overflow-x:scroll; overflow-y:scroll;">
 <table>
 <tr>
    <th>企業ID</th><th>企業名</th><th>担当者名</th><th>住所</th><th>電話</th><th>メールアドレス</th><th>登録日</th>

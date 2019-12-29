@@ -1,11 +1,13 @@
 <h1 class="title">製品一覧</h1>
 <link href="css/productall.css" rel="stylesheet" type="text/css"> 
 
+<div style="height:600px; width:auto; overflow-x:scroll; overflow-y:scroll;">
 <table>
 <tr>
    <th>製品ID</th><th>製品名</th><th>製品一般名</th><th>メーカー名</th><th>品番</th><th>価格</th><th>代理店</th><th>営業先</th><th>営業エリア</th><th>登録日</th>
-@foreach ($products as $product);
+>@foreach ($products as $product);
 <tr>
+
 <!-- 製品一覧 -->
 <tr>
 <td class= "table-text">
@@ -44,14 +46,17 @@
   </div>
 </td>
 <td class= "table-text">
-  <div>{{ $company["timestamps"]}}
-     <input type="hidden" name="timestamps" value="{{$company['timestamps']}}">
+  <div>{{ $product["timestamps"]}}
+     <input type="hidden" name="timestamps" value="{{$product['timestamps']}}">
   </div>
 </td>
-</tr>
+
 
 <!-- 修正ボタン -->
 <td>
+<button type="submit" class="btn-update">
+  修正
+  </button>
   <a href="{{ url('productall/edit/'.$product->product_id)}}">
     修正
 </a>
@@ -73,7 +78,4 @@
 </tr>
 @endforeach
 </table>
-
-<p id="form_submit"><input type="submit" class="form_submit_button" value="送信 Send" /></p>
-
-
+</div>

@@ -21,6 +21,11 @@ class CreateMrsTable extends Migration
             $table->string('mr_mail');             
             $table->timestamps();
         });
+
+        Schema::table('mrs', function (Blueprint $table) {
+            $table->string('mr_department')->after('mr_mail');
+            $table->string('mr_area')->after('mr_department');
+        });
     }
 
     /**

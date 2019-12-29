@@ -39,10 +39,6 @@ p
     line-height: 180%;
 }
 
-strong
-{
-}
-
 a
 {
     color: #2372DE;
@@ -54,6 +50,12 @@ a:hover
 }
 
 .container
+{
+    margin: 0px auto;
+    width: 1200px;
+}
+
+.container2
 {
     margin: 0px auto;
     width: 1200px;
@@ -214,12 +216,6 @@ ul.contact li a:before
     color: #FFFFFF;
 }
 
-ul.contact li a.icon-twitter:before { background: #2DAAE4; }
-ul.contact li a.icon-facebook:before { background: #39599F; }
-ul.contact li a.icon-dribbble:before { background: #C4376B;	}
-ul.contact li a.icon-tumblr:before { background: #31516A; }
-ul.contact li a.icon-rss:before { background: #F2600B; }
-
 /*********************************************************************************/
 /* Button Style                                                                  */
 /*********************************************************************************/
@@ -241,20 +237,7 @@ ul.contact li a.icon-rss:before { background: #F2600B; }
     color: #FFF;
 }
 
-    .button:hover
-    {
-    }
     
-    .button:active
-    {
-    }
-    
-    .button-big
-    {
-        padding: 1.6em 4em;
-        font-size: 1.4em;
-        font-weight: 900;
-    }
         
 /*********************************************************************************/
 /* Heading Titles                                                                */
@@ -284,10 +267,6 @@ ul.contact li a.icon-rss:before { background: #F2600B; }
 /*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/
-
-#header-wrapper
-{
-}
 
 #header
 {
@@ -360,9 +339,6 @@ ul.contact li a.icon-rss:before { background: #F2600B; }
     color: #ACCFFF;
 }
 
-#menu li:hover a, #menu li.active a, #menu li.active span
-{
-}
 
 #menu .current_page_item a
 {
@@ -381,14 +357,10 @@ ul.contact li a.icon-rss:before { background: #F2600B; }
     background: #F6F6F6;
 }
 
+
 #banner .box-left
 {
     float: left;
-}
-
-#banner .box-right
-{
-    float: right;
 }
 
 #banner h2
@@ -459,17 +431,7 @@ ul.contact li a.icon-rss:before { background: #F2600B; }
     color: #454445;
 }
 
-#stwo-col .sbox1
-{
-    float: left;
-    width: 210px;
-}
 
-#stwo-col .sbox2
-{
-    float: right;
-    width: 210px;
-}
 
 /*********************************************************************************/
 /* Copyright                                                                     */
@@ -553,28 +515,4 @@ ul.contact li a.icon-rss:before { background: #F2600B; }
     color: #2372DE;
 }
 
-.column1,
-.column2,
-.column3,
-.column4
-{
-    width: 282px;
-}
-
-.column1,
-.column2
-{
-    float: left;
-    margin-right: 24px;
-}
-
-.column3
-{
-    float: left;
-}
-
-.column4
-{
-    float: right;
-}
 

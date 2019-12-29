@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 //作成したモデルファイルをControllerに読み込む
 use App\Company;
 
@@ -72,11 +73,19 @@ class CompanyController extends Controller
        return redirect('companyall');
     }
 
-
     // companiesテーブル内の特定のデータを削除する。
     public function deleteCompany (Request $request){
         Company::destroy($request->company_id);
         return redirect('companyall'); 
     }
+
+    //indexを行ったら、company_mypageを表示する。
+    public function __construct(){
+       $this->middleware('auth');}
     
+    public function index()
+    {
+        return view('company_mypage');
+    }
+
 }

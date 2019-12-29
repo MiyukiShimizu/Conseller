@@ -123,11 +123,34 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
 
 
 //6. 企業ログイン、MRログインページを表示する。
-//アドレスが/company_loginの時は、company_login.blade.phpを表示する。
-Route::get('/company_login', function () {
-    return view('company_login');
+//アドレスが/loginの時は、login.blade.phpを表示する。
+Route::get('/login', function () {
+    return view('login');
 });
 
+//loginでindexを取ったら、Companycontrollerのindexを行う。
+Auth::routes();
+Route::get('/register', function () {
+    return view('company_mypage');
+});
+
+//7.アドレスが/company_mypageの時は、company_mypage.blade.phpを表示する。
+Route::get('/company_mypage', function () {
+    return view('company_mypage');
+});
+
+//8.アドレスが/mr_mypageの時は、mr_mypage.blade.phpを表示する。
+Route::get('/mr_mypage', function () {
+    return view('mr_mypage');
+});
 Route::get('/mr_login', function () {
     return view('mr_login');
 });
+
+
+
+//10. 製品写真、添付文書、販促資料をアップロードする。
+Route::get('/image_input', 'ImageController@getImageInput');
+Route::post('/image_confirm', 'ImageController@postImageConfirm');
+Route::post('/image_complete', 'ImageController@postImageComplete');
+

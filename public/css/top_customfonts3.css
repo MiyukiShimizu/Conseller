@@ -129,8 +129,6 @@
   .icon-grid,
   .icon-graph,
   .icon-microphone,
-  .icon-music-tone-alt,
-  .icon-music-tone,
   .icon-earphones-alt,
   .icon-earphones,
   .icon-equalizer,
@@ -568,12 +566,6 @@
   }
   .icon-microphone:before {
     content: "\e063";
-  }
-  .icon-music-tone-alt:before {
-    content: "\e061";
-  }
-  .icon-music-tone:before {
-    content: "\e062";
   }
   .icon-earphones-alt:before {
     content: "\e03c";

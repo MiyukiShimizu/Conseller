@@ -22,16 +22,25 @@
 		<dt>代理店<span>Distributor</span></dt>
 		<dd class="required"><input type="text" id="product_distributor" name="product_distributor" value="{{$product['product_distributor']}}" /></dd>
 
-		<dt>営業先<span>sales destination</span></dt>
-		<dd><input type="checkbox" id="product_destinaion" name="product_destination" value="naika" />内科
-		<dd><input type="checkbox" id="product_destinaion" name="product_destination" value="shoukaki" />消化器外科
-		<dd><input type="checkbox" id="product_destinaion" name="product_destination" value="seikei" />整形外科
+		<dt>営業先<span>sales department</span></dt>
+		<dd><input type="checkbox" id="product_department" name="product_destination" value="naika" />内科
+		<dd><input type="checkbox" id="product_department" name="product_destination" value="shoukaki" />消化器外科
+		<dd><input type="checkbox" id="product_department" name="product_destination" value="seikei" />整形外科
 		</dd>
 		
+		<dt>営業先<span>sales department</span></dt>
+		@foreach($product["department_product"] as $item)
+		<dd>
+		<input type="hidden"id="" name="department_product[]" value="{{$item}}" />{{$item}} 
+		</dd>
+		@endforeach
+
 		<dt>営業エリア<span>sales area</span></dt>
-		<dd><input type="radio" id="product_area" name="product_area1" value="tokyo" />東京
-		<dd><input type="radio" id="product_area" name="product_area2" value="osaka" />大阪
-	    </dd>
+		@foreach($product["product_area"] as $areaitem)
+		<dd>
+		<input type="hidden"id="" name="product_area[]" value="{{$areaitem}}" />{{$areaitem}} 
+		</dd>
+		@endforeach
 </dl>
 
 <!-- id値を送信 -->

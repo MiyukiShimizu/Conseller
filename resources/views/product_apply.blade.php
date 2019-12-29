@@ -34,17 +34,28 @@
 		<dt>代理店<span>Distributor</span></dt>
 		<dd class="required"><input type="text" id="product_distributor" name="product_distributor" value="" /></dd>
 
-		<dt>営業先<span>sales destination</span></dt>
+		<dt>営業先<span>sales department</span></dt>
 		@foreach($department as $item)
 		<dd><input type="checkbox" id="" name="department_product[]" value="{{$item['department_name']}}" />{{$item['department_name']}}
 		@endforeach
 	    </dd>
 		
 		<dt>営業エリア<span>sales area</span></dt>
-		<dd><input type="checkbox" id="product_area" name="product_area" value="tokyo" />東京
-		<dd><input type="checkbox" id="product_area" name="product_area" value="osaka" />大阪
-	    </dd>
+		@foreach($area as $areaitem)
+		<dd><input type="checkbox" id="" name="product_area[]" value="{{$areaitem['area_name']}}" />{{$areaitem['area_name']}}
+	    @endforeach
+		</dd>
 	</dl>
+
+	@section('body')
+    <form action="image_confirm" method="post" enctype="multipart/form-data" id="form">
+        @csrf
+        製品写真：
+        <input type="file" name="imagefile" value=""/><br /><br />
+
+        <input type="submit" name="confirm" id="button" value="アップロード" />
+    </form>
+    @endsection
 	
     <p id="form_submit"><input type="submit" class="form_submit_button" value="送信 Send" /></p>
 </form>

@@ -25,7 +25,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/home';　
+    // →これを/user/company_mypageにする？
 
     /**
      * Create a new controller instance.

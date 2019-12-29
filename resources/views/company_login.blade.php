@@ -10,7 +10,7 @@
 			  
 			  <input type="text" class="form-control" name="Username" placeholder="Username" required="" autofocus="" />
 			  <input type="password" class="form-control" name="Password" placeholder="Password" required=""/>     		  
-			 
+			  <a href="{{ route('login') }}">Login</a>     
 			  <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button>  			
 		</form>			
 	</div>

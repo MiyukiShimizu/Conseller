@@ -10,8 +10,6 @@
 table{
     width: 100%;
     border-spacing: 0;
-    overflow-x: auto;
-    white-space: nowrap;
   }
   
 table th{
@@ -20,7 +18,6 @@ table th{
     padding: 10px 0;
   }
  
-/* なんでスクロールバーが出ないのだろう。 */
 table td{
     border-bottom: solid 2px #ddd;
     border-right: 1px solid #bbb;

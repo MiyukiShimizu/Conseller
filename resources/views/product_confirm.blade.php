@@ -26,24 +26,38 @@
 
 		<dt>品番<span>No.</span></dt>
 		<dd><input type="text" id="product_no" name="product_no" value="{{$product['product_no']}}" /> </dd>
-
-		<dt>代理店<span>Distributor</span></dt>
-		<dd class="required"><input type="text" id="product_distributor" name="product_distributor" value="{{$product['product_distributor']}}" /></dd>
-
-		<dt>営業先<span>sales destination</span></dt>
-		@foreach($product["department_product"] as $item)
-		<dd>
-
-			<input type="hidden"id="" name="department_product[]" value="{{$item}}" />{{$item}} 
-		</dd>
-		@endforeach
-		
-	   
-
+        
 		<dt>価格<span>price</span></dt>
 		<dd class="required"><input type="text" id="product_price" name="product_price" value="{{$product['product_price']}}" /></dd>
 		
+		<dt>代理店<span>Distributor</span></dt>
+		<dd class="required"><input type="text" id="product_distributor" name="product_distributor" value="{{$product['product_distributor']}}" /></dd>
 
+		<dt>営業先<span>sales department</span></dt>
+		@foreach($product["department_product"] as $item)
+		<dd>
+			<input type="hidden"id="" name="department_product[]" value="{{$item}}" />{{$item}} 
+		</dd>
+		@endforeach
+
+		<dt>営業エリア<span>sales area</span></dt>
+		@foreach($product["product_area"] as $areaitem)
+		<dd>
+			<input type="hidden"id="" name="product_area[]" value="{{$areaitem}}" />{{$areaitem}} 
+		</dd>
+		@endforeach
+     <!-- 画像のアップロード -->
+		@section('body')
+        <form action="image_complete" method="post">
+        @csrf
+        <table border="1">
+            <tr>
+                <td>製品写真</td>
+                <td><img src="{{ $data['read_temp_path'] }}" width="200" height="130"></td>
+            </tr>
+        </table>
+    </form>
+@endsection
 	</dl>
 
   <p id="form_submit"><input type="submit" id="form_submit_button" value="登録 Register" /></p>

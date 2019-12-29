@@ -21,7 +21,8 @@ class CreateProductsTable extends Migration
             $table->string('product_no'); 
             $table->integer('product_price'); 
             $table->string('product_distributor');
-            $table->timestamps();
+            $table->string('path');
+            $table->timestamps(); 
         });
     }
 

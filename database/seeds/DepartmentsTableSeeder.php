@@ -13,9 +13,11 @@ class DepartmentsTableSeeder extends Seeder
     public function run()
     {
         Department::insert([
-    		[ 'department_name' => '内科'],
+        [ 'department_name' => '内科'],
+        [ 'department_name' => '小児外科'],
     		[ 'department_name' => '消化器外科'],
-    		[ 'department_name' => '整形外科'],
+        [ 'department_name' => '整形外科'],
+        [ 'department_name' => '看護部'],
         ]);
     }
 }

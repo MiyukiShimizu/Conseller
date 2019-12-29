@@ -49,20 +49,19 @@
             <a class="js-scroll-trigger" href="#contact">お問い合わせ</a>
         </li>
         <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#companylogin">お客様ログイン</a>
+            <a class="js-scroll-trigger" href="#mr_login">MRログイン</a>
         </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#MRlogin">MRログイン</a>
-        </li>
+
     </ul>
 </nav>
 
 <!-- Header -->
 <header class="masthead d-flex">
     <div class="container text-center my-auto">
+   <a class="top_login" href="{{ route('login') }}">Login</a>     
         <h1 class="mb-1">Conseller</h1>
         <h3 class="mb-5">
-            <em>他社の医療機器とシナジーを形成して営業を促進！</em>
+            <em>営業マン不足、製品数不足を補い、医療機器の営業を促進！</em>
         </h3>
         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Consellerについてもっと知る</a>
     </div>
@@ -74,8 +73,8 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h2>Consellerは、貴社の医療機器を他社の医療機器と一緒に<br>同じ診療科に営業するサービスです。</h2>
-                <p class="lead mb-5">自社製品が少なくても、自社の営業マンが少なくても、Consellerで他社製品とシナジーを作り、<br>目的の診療科に効率よく営業できます。</p>
+                <h2>Consellerは、貴社の医療機器を他社の医療機器と一緒に<br>希望の診療科に営業するサービスです。</h2>
+                <p class="lead mb-5">自社製品が少なくても、自社の営業マンが少なくても、Consellerで他社製品とシナジーを作り、<br>目的の診療科に効率よく営業します。</p>
                 <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">Consellerのしくみ
                 </a>
             </div>
@@ -125,27 +124,124 @@
                 <h4>
                     <strong>状況を確認する</strong>
                 </h4>
-                <p class="text-faded mb-0">毎月の営業先、営業件数、<br>受けた質問を確認します</p>
+                <p class="text-faded mb-0">毎月の営業先、営業件数、<br>受けた質問を確認できます</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Map -->
-<section class="content-section" id="portfolio">
+<section class="content-section" id="portfolio" style="height: 58%;>
 <div class="container">
     <div class="content-section-heading text-center">
     <h3 class="text-secondary mb-0">Customer</h3>    
     <h2 class="mb-5">Consellerの営業先</h2>
-    <p class="lead mb-5">東京地区、大阪地区の主要な病院に営業します</p>
+    <p class="lead mb-5">東京エリア、大阪エリアの200床以上の病院に対して営業を行います。</p>
+    <p class="lead mb-5">東京エリアの営業先例</p>
     </div>
 </div>
 </section>
-<section id="contact" class="map">
-    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-    <br/>
+<section>
     <small>
-        <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" style="height: 85%; width: 100%; margin: 2rem auto 0;"></div>
+       <!-- jqueryの読み込む -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- google map api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoaUoi8RZ5xqHBNGyxKfM9McBVFI3y8HQ"
+    ></script>
+    <!-- js -->
+    <script type="text/javascript">
+     //マーカーをつける所を決める
+     var map
+     var marker = [];
+     var infoWindow = [];
+     var markerData = [ // マーカーを立てる場所名・緯度・経度
+ {
+    name: '東京大学医学部付属病院',
+    lat: 35.712678,
+    lng: 139.761989
+ }, {
+    name: '順天堂大学病院',
+    lat: 35.6459411,
+    lng: 139.9071013
+ }, {
+    name: '東京医科歯科大学病院',
+    lat: 35.7009680,
+    lng: 139.7649552
+ }, {
+    name: '三井記念病院',
+    lat: 35.6997555,
+    lng: 139.7792312
+ }, {
+    name: '東京女子医科大学',
+    lat: 35.6980125,
+    lng: 139.7206990
+ }, {
+    name: '国立国際医療研究センター',
+    lat: 35.7025540,
+    lng: 139.7161940
+ }, {
+    name: '同愛記念病院',
+    lat: 35.6998610,
+    lng: 139.7943510
+ }, {
+    name: 'JCHO東京新宿メディカルセンター',
+    lat: 35.7034260,
+    lng: 139.7421174
+ }
+];
+
+// function initMap() {
+ // 地図の作成
+    var mapLatLng = new google.maps.LatLng({lat: markerData[0]['lat'], lng: markerData[0]['lng']}); // 緯度経度のデータ作成
+    map = new google.maps.Map(document.getElementById('map'), { // #sampleに地図を埋め込む
+    center: mapLatLng, // 地図の中心を指定
+    zoom: 14.3 // 地図のズームを指定
+   });
+
+    //   center: {
+    //       lat: 35.70, //緯度を設定
+    //       lng: 139.759 //経度を設定
+
+ // マーカー毎の処理
+ for (var i = 0; i < markerData.length; i++) {
+        markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
+        marker[i] = new google.maps.Marker({ // マーカーの追加
+         position: markerLatLng, // マーカーを立てる位置を指定
+            map: map // マーカーを立てる地図を指定
+       });
+ 
+     infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+         content: '<div class="map">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+       });
+ 
+     markerEvent(i); // マーカーにクリックイベントを追加
+ }
+ 
+// }
+ 
+// マーカーにクリックイベントを追加
+function markerEvent(i) {
+    marker[i].addListener('click', function() { // マーカーをクリックしたとき
+      infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+  });
+}
+
+    </script>
     </small>  
 </section>
 
