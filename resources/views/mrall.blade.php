@@ -1,5 +1,6 @@
 <h1 class="title">MR一覧</h1>
 <link href="css/companyall.css" rel="stylesheet" type="text/css"> 
+<div style="height:450px; width:auto; overflow-x:scroll; overflow-y:scroll;">
 
 <table>
 <tr>
@@ -63,7 +64,14 @@
 </tr>
 @endforeach
 </table>
+</div>
 
-<p id="form_submit"><input type="submit" class="form_submit_button" value="送信 Send" /></p>
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container">
+        <p class="text-muted small mb-0">Copyright &copy; 株式会社メディカルラボパートナーズ</p>
+    </div>
+</footer>
+
 
 

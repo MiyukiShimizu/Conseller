@@ -12,12 +12,12 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string
      */
-    public function handle($request, Closure $next)
-    {
-        if (!Auth::check()) { // 非ログインはログインページに飛ばす
-            return redirect('/login');
-        }
-        return $next($request);
-    }
+    // public function handle($request, Closure $next)
+    // {
+    //     if (!Auth::check()) { // 非ログインはログインページに飛ばす
+    //         return redirect('/login');
+    //     }
+    //     return $next($request);
+    // }
     
 }

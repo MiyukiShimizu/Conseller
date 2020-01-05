@@ -1,6 +1,7 @@
-<h1 class="title">企業一覧</h1>
+<h1 class="title">営業レポート一覧</h1>
 <link href="css/reportall.css" rel="stylesheet" type="text/css"> 
 
+<div style="height:450px; width:auto; overflow-x:scroll; overflow-y:scroll;">
 <table>
 <tr>
    <th>レポートID</th><th>MR名</th><th>訪問日</th><th>病院名</th><th>診療科名</th><th>製品名</th><th>コメント</th><th>販売数</th><th>販売単価</th><th>登録日</th>
@@ -83,7 +84,12 @@
 </tr>
 @endforeach
 </table>
+</div>
 
-<p id="form_submit"><input type="submit" class="form_submit_button" value="送信 Send" /></p>
-
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container">
+        <p class="text-muted small mb-0">Copyright &copy; 株式会社メディカルラボパートナーズ</p>
+    </div>
+</footer>
 

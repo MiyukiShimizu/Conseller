@@ -1,11 +1,11 @@
 <h1 class="title">製品一覧</h1>
 <link href="css/productall.css" rel="stylesheet" type="text/css"> 
 
-<div style="height:600px; width:auto; overflow-x:scroll; overflow-y:scroll;">
+<div style="height:450px; width:auto; overflow-x:scroll; overflow-y:scroll;">
 <table>
 <tr>
    <th>製品ID</th><th>製品名</th><th>製品一般名</th><th>メーカー名</th><th>品番</th><th>価格</th><th>代理店</th><th>営業先</th><th>営業エリア</th><th>登録日</th>
->@foreach ($products as $product);
+@foreach ($products as $product);
 <tr>
 
 <!-- 製品一覧 -->
@@ -79,3 +79,10 @@
 @endforeach
 </table>
 </div>
+
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container">
+        <p class="text-muted small mb-0">Copyright &copy; 株式会社メディカルラボパートナーズ</p>
+    </div>
+</footer>

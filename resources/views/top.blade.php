@@ -37,19 +37,19 @@
             <a class="js-scroll-trigger" href="#about">Consellerのしくみ</a>
         </li>
         <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#services">消す予定</a>
-        </li>
-        <li class="sidebar-nav-item">
             <a class="js-scroll-trigger" href="#portfolio">営業先</a>
         </li>
         <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#contact">消す予定</a>
+            <a class="js-scroll-trigger" href="#">現在の状況</a>
         </li>
         <li class="sidebar-nav-item">
             <a class="js-scroll-trigger" href="#contact">お問い合わせ</a>
         </li>
         <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#mr_login">MRログイン</a>
+            <a class="js-scroll-trigger" href="{{url('/company/login')}}">企業ログイン</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="{{url('/mr/login')}}">MRログイン</a>
         </li>
 
     </ul>
@@ -262,50 +262,59 @@ function markerEvent(i) {
                 <h2 class="mb-5">最近の状況</h2>
             </div>
             <div class="row no-gutters">
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#">
-                  <span class="caption">
-                    <span class="caption-content">
-                      <h2>Stationary</h2>
-                      <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
-                    </span>
-                  </span>
-                        <img class="img-fluid" src="img/portfolio-s1.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#">
-                  <span class="caption">
-                    <span class="caption-content">
-                      <h2>Ice Cream</h2>
-                      <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
-                    </span>
-                  </span>
-                        <img class="img-fluid" src="img/portfolio-s2.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#">
-                  <span class="caption">
-                    <span class="caption-content">
-                      <h2>Strawberries</h2>
-                      <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-                    </span>
-                  </span>
-                        <img class="img-fluid" src="img/portfolio-s3.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#">
-                  <span class="caption">
-                    <span class="caption-content">
-                      <h2>Workspace</h2>
-                      <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                    </span>
-                  </span>
-                        <img class="img-fluid" src="img/portfolio-s4.jpg" alt="">
-                    </a>
-                </div>
+            <!-- ファイルを直接読み込む -->
+             <script src='./PATH/Chart.min.js'></script>
+             <!-- CDNとして読み込む -->
+             <script src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js'></script>
+
+             <!-- グラフ描画の要素とグラフ設定のスクリプト -->
+             <canvas id="myChart"></canvas>
+             <script>
+             var ctx = document.getElementById("myChart").getContext('2d');
+             var myBarChart_02 = new Chart(ctx, {
+                 type: 'bar',
+                 data: {
+                    labels: ["内科", "消化器外科", "整形外科", "小児科", "看護部"],
+                    datasets: [{
+                        data: [2, 6, 5, 3, 4],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                    options: {
+                    scales: {
+                    yAxes: [{
+                        ticks: {
+                         beginAtZero:true,
+                         fontColor: '#000',
+                         fontSize: 12,
+                         fontWeight: 'bold',
+                         max: 10
+                        },
+                        gridLines: {
+                         color: '#ddd',
+                         borderDash: [5,5],
+                         lineWidth: 1,
+                         zeroLineWidth: 2,
+                         zeroLineColor: '#444',
+                         drawTicks: false
+                        }
+                    }],
+                    xAxes: [{
+                       ticks: {
+                       fontColor: '#000',
+                       fontSize: 12,
+                       fontWeight: 'bold'
+                       },
+                       gridLines: {
+                       display: false
+                       }
+                    }],
+      }
+    }
+                 }};
+            </script>
+
             </div>
         </div>
     </section>

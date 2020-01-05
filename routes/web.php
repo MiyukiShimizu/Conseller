@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('top');
 });
 
-
 //2. 企業登録
 //company_applyのアドレスからデータを得たら、CompanyControllerのgetCompanyformを行う。
 Route::get('/company_apply', 'CompanyController@getCompanyform'); 
@@ -122,35 +121,70 @@ Route::post('/reportall/update/{report_id}', 'ReportController@updateReport');
 Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
 
 
-//6. 企業ログイン、MRログインページを表示する。
+//6. 企業ログイン,ログアウト
 //アドレスが/loginの時は、login.blade.phpを表示する。
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/company_login', function () {
+//     return view('company_login');
+// });
 
 //loginでindexを取ったら、Companycontrollerのindexを行う。
-Auth::routes();
-Route::get('/register', function () {
-    return view('company_mypage');
-});
+// Auth::routes();
+// Route::get('/company_register', function () {
+//     return view('company_mypage');
+// });
 
 //7.アドレスが/company_mypageの時は、company_mypage.blade.phpを表示する。
-Route::get('/company_mypage', function () {
-    return view('company_mypage');
-});
+// Route::get('/company_mypage', function () {
+//     return view('company_mypage');
+// });
 
-//8.アドレスが/mr_mypageの時は、mr_mypage.blade.phpを表示する。
-Route::get('/mr_mypage', function () {
-    return view('mr_mypage');
-});
-Route::get('/mr_login', function () {
-    return view('mr_login');
-});
+    Route::group(['prefix' => 'company', 'middleware' => 'guest:user'], function() {
+    Route::get('/company_mypage', function () {
+        return view('company.company_mypage');
+    });
+    Route::get('login', 'Company\Auth\LoginController@showLoginForm')->name('company.login');
+    Route::post('login', 'Company\Auth\LoginController@login')->name('company.login');
+    Route::get('register', 'Company\Auth\RegisterController@showRegisterForm')->name('company.register');
+    Route::post('register', 'Company\Auth\RegisterController@register')->name('company.register');
+    });
+    Route::group(['prefix' => 'company', 'middleware' => 'auth:user'], function(){
+    Route::post('logout', 'Company\Auth\LoginController@logout')->name('company.logout');
+    Route::get('company_mypage', 'Company\HomeController@index')->name('company.company_mypage');
+    });
 
-
+//9.管理者用ページへのログイン、ログアウト
+    Route::group(['prefix' => 'admin', 'middleware' => 'guest:admin'], function() {
+    Route::get('/home', function () {
+        return view('admin.home');
+    });
+    Route::get('login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
+    Route::post('login', 'Admin\Auth\LoginController@login')->name('admin.login');
+    Route::get('register', 'Admin\Auth\RegisterController@showRegisterForm')->name('admin.register');
+    Route::post('register', 'Admin\Auth\RegisterController@register')->name('admin.register');
+    });
+    Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function(){
+    Route::post('logout', 'Admin\Auth\LoginController@logout')->name('admin.logout');
+    Route::get('home', 'Admin\HomeController@index')->name('admin.home');
+    });
 
 //10. 製品写真、添付文書、販促資料をアップロードする。
 Route::get('/image_input', 'ImageController@getImageInput');
 Route::post('/image_confirm', 'ImageController@postImageConfirm');
 Route::post('/image_complete', 'ImageController@postImageComplete');
 
+//11. トップページ
+//アドレスが/homeの時は、top.blade.phpを表示する。
+// Route::get('/home', function () {
+//     return view('top');
+// });
+
+//12. 試作用
+// アドレスが/〇〇の時は、〇〇.blade.phpを表示する。
+Route::get('company_productall', function(){
+    return view('company_productall');
+});
+
+
+
+
+?>

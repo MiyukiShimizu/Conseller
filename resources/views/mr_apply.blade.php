@@ -31,7 +31,7 @@
 		<dd class="required"><input type="text" id="mr_mail" name="mr_mail" value="" /></dd>
 		
         <dt>可能な営業先<span>sales department</span></dt>
-		@foreach($department ?? '' as $item)
+		@foreach((array)$department as $item)
 		<dd><input type="checkbox" id="" name="mr_department[]" value="{{$item['mr_department']}}" />{{$item['mr_department']}}
 	    @endforeach
 		</dd>

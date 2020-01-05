@@ -1,7 +1,7 @@
 <h1 class="title">企業一覧</h1>
 <link href="css/companyall.css" rel="stylesheet" type="text/css"> 
 
-<div style="height:600px; width:auto; overflow-x:scroll; overflow-y:scroll;">
+<div style="height:450px; width:auto; overflow-x:scroll; overflow-y:scroll;">
 <table>
 <tr>
    <th>企業ID</th><th>企業名</th><th>担当者名</th><th>住所</th><th>電話</th><th>メールアドレス</th><th>登録日</th>
@@ -69,7 +69,12 @@
 </tr>
 @endforeach
 </table>
+</div>
 
-<p id="form_submit"><input type="submit" class="form_submit_button" value="送信 Send" /></p>
-
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container">
+        <p class="text-muted small mb-0">Copyright &copy; 株式会社メディカルラボパートナーズ</p>
+    </div>
+</footer>
 

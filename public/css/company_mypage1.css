@@ -219,6 +219,20 @@ ul.contact li a:before
 /*********************************************************************************/
 /* Button Style                                                                  */
 /*********************************************************************************/
+.btn-danger
+{
+    background: white;
+    padding: 1em 2em;
+    color: black;
+    font-size: 16;
+}
+
+/* なぜ、右に寄らないのだろう。 */
+.btn-logout{
+    position: relative;
+    align-items: right;
+
+}
 
 .button
 {
@@ -235,6 +249,7 @@ ul.contact li a:before
     text-transform: uppercase;
     font-weight: 600;
     color: #FFF;
+    margin-left: 40em;
 }
 
     
@@ -271,7 +286,7 @@ ul.contact li a:before
 #header
 {
     position: relative;
-    height: 150px;
+    height: 130px;
 }
 
 /*********************************************************************************/
@@ -392,7 +407,7 @@ ul.contact li a:before
 #page
 {
     overflow: hidden;
-    padding: 6em 0em;
+    padding: 4em 0em;
 }
 
 /*********************************************************************************/
@@ -437,25 +452,16 @@ ul.contact li a:before
 /* Copyright                                                                     */
 /*********************************************************************************/
 
-#copyright
+.text-muted
 {
-    overflow: hidden;
-    padding: 5em 0em;
-}
-
-#copyright p
-{
-    letter-spacing: 0.20em;
     text-align: center;
-    text-transform: uppercase;
-    font-size: 0.80em;
-    color: #ACCFFF;
+    color: white;
 }
 
-#copyright a
+.text-muted2
 {
-    text-decoration: none;
-    color: #ACCFFF;
+    text-align: center;
+    color: white;
 }
 
 /*********************************************************************************/

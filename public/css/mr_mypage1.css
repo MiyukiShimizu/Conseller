@@ -272,7 +272,7 @@ ul.contact li a:before
 #header
 {
     position: relative;
-    height: 150px;
+    height: 130px;
 }
 
 /*********************************************************************************/
@@ -393,7 +393,7 @@ ul.contact li a:before
 #page
 {
     overflow: hidden;
-    padding: 6em 0em;
+    padding: 4em 0em;
 }
 
 /*********************************************************************************/
@@ -438,25 +438,10 @@ ul.contact li a:before
 /* Copyright                                                                     */
 /*********************************************************************************/
 
-#copyright
+.text-muted
 {
-    overflow: hidden;
-    padding: 5em 0em;
-}
-
-#copyright p
-{
-    letter-spacing: 0.20em;
+    color: white;
     text-align: center;
-    text-transform: uppercase;
-    font-size: 0.80em;
-    color: #ACCFFF;
-}
-
-#copyright a
-{
-    text-decoration: none;
-    color: #ACCFFF;
 }
 
 /*********************************************************************************/

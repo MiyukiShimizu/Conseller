@@ -25,8 +25,19 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';　
-    // →これを/user/company_mypageにする？
+    protected $redirectTo = '/company_mypage';
+    // →これを/company_mypageにする？
+
+    // ログイン画面
+    public function showLoginForm()
+    {
+    return view('company_login'); //企業ログインページのテンプレート
+    }
+
+    protected function guard()
+    {
+        return \Auth::guard('user'); //ユーザー認証用のguardを指定
+    }
 
     /**
      * Create a new controller instance.
@@ -37,4 +48,12 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    
+    public function logout(Request $request){
+        $this->guard()->logout();
+        $request->session()->invalidate();
+        return $this->loggedOut($request) ?: redirect('/');  // ログアウト後のリダイレクト先
+    }
+
 }

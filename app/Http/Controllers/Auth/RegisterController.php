@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/company_mypage'; //登録後のリダイレクト先
 
     /**
      * Create a new controller instance.
@@ -39,6 +39,13 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
+
+    public function showRegisterForm()
+    {
+        return view('company_register');  // ユーザー登録用テンプレート
+    }
+    
+
 
     /**
      * Get a validator for an incoming registration request.
@@ -67,4 +74,11 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    protected function guard()
+    {
+            return \Auth::guard('user'); //ユーザー認証用のguardを指定
+    }
+
+    
 }
