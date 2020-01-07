@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddProductDepartmentToProductsTable extends Migration
+class CreateAreasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddProductDepartmentToProductsTable extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->integer('product_department');
+        Schema::create('areas', function (Blueprint $table) {
+            $table->bigIncrements('area_id');
+            $table->string('area_name');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddProductDepartmentToProductsTable extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('product_department');
-        });
+        Schema::dropIfExists('areas');
     }
 }

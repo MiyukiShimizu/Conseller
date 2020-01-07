@@ -122,22 +122,6 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
 
 
 //6. 企業ログイン,ログアウト
-//アドレスが/loginの時は、login.blade.phpを表示する。
-// Route::get('/company_login', function () {
-//     return view('company_login');
-// });
-
-//loginでindexを取ったら、Companycontrollerのindexを行う。
-// Auth::routes();
-// Route::get('/company_register', function () {
-//     return view('company_mypage');
-// });
-
-//7.アドレスが/company_mypageの時は、company_mypage.blade.phpを表示する。
-// Route::get('/company_mypage', function () {
-//     return view('company_mypage');
-// });
-
     Route::group(['prefix' => 'company', 'middleware' => 'guest:user'], function() {
     Route::get('/company_mypage', function () {
         return view('company.company_mypage');
@@ -150,6 +134,21 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
     Route::group(['prefix' => 'company', 'middleware' => 'auth:user'], function(){
     Route::post('logout', 'Company\Auth\LoginController@logout')->name('company.logout');
     Route::get('company_mypage', 'Company\HomeController@index')->name('company.company_mypage');
+    });
+
+//8. MRログイン,ログアウト
+    Route::group(['prefix' => 'mr', 'middleware' => 'guest:mr'], function() {
+    Route::get('/mr_mypage', function () {
+        return view('mr.mr_mypage');
+    });
+    Route::get('login', 'Mr\Auth\LoginController@showLoginForm')->name('mr.login');
+    Route::post('login', 'Mr\Auth\LoginController@login')->name('mr.login');
+    Route::get('register', 'Mr\Auth\RegisterController@showRegisterForm')->name('mr.register');
+    Route::post('register', 'Mr\Auth\RegisterController@register')->name('mr.register');
+    });
+    Route::group(['prefix' => 'mr', 'middleware' => 'auth:mr'], function(){
+    Route::post('logout', 'Mr\Auth\LoginController@logout')->name('mr.logout');
+    Route::get('mr_mypage', 'Mr\HomeController@index')->name('mr.mr_mypage');
     });
 
 //9.管理者用ページへのログイン、ログアウト
@@ -180,8 +179,8 @@ Route::post('/image_complete', 'ImageController@postImageComplete');
 
 //12. 試作用
 // アドレスが/〇〇の時は、〇〇.blade.phpを表示する。
-Route::get('company_productall', function(){
-    return view('company_productall');
+Route::get('company_applyinfo', function(){
+    return view('company_applyinfo');
 });
 
 

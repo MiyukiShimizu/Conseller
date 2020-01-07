@@ -36,13 +36,13 @@
 
 		<dt>営業先<span>sales department</span></dt>
 		@foreach($department as $item)
-		<dd><input type="checkbox" id="" name="department_product[]" value="{{$item['department_name']}}" />{{$item['department_name']}}
+		<dd><input type="checkbox" id="" name="department_product[]" value="{{$item['department_id']}}" />{{$item['department_name']}}
 		@endforeach
 	    </dd>
 		
 		<dt>営業エリア<span>sales area</span></dt>
 		@foreach($area as $areaitem)
-		<dd><input type="checkbox" id="" name="product_area[]" value="{{$areaitem['area_name']}}" />{{$areaitem['area_name']}}
+		<dd><input type="checkbox" id="" name="product_area[]" value="{{$areaitem['area_id']}}" />{{$areaitem['area_name']}}
 	    @endforeach
 		</dd>
 	</dl>

@@ -1,6 +1,6 @@
 <?php
-namespace App\Http\Controllers\Company\Auth;
-use App\User;
+namespace App\Http\Controllers\Mr\Auth;
+use App\Mr;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -23,7 +23,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/company/company_mypage';
+    protected $redirectTo = '/Mr/mr_mypage';
     /**
      * Create a new controller instance.
      *
@@ -31,7 +31,7 @@ class RegisterController extends Controller
      */
     public function showRegisterForm()
     {
-        return view('company.auth.register');  // 企業用テンプレート
+        return view('mr.auth.register');  // 管理者用テンプレート
     }
     /**
      * Get a validator for an incoming registration request.
@@ -43,7 +43,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:companies'], // companiesテーブに変更
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:mrs'], // mrsテーブに変更
             'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
     }
@@ -55,13 +55,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Mr::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
     }
     protected function guard(){
-        return \Auth::guard('user'); //ユーザー認証のguardを指定
+        return \Auth::guard('mr'); //MR認証のguardを指定
     }
 }

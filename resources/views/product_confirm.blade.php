@@ -47,7 +47,7 @@
 		</dd>
 		@endforeach
      <!-- 画像のアップロード -->
-		@section('body')
+		<!-- @section('body')
         <form action="image_complete" method="post">
         @csrf
         <table border="1">
@@ -57,7 +57,7 @@
             </tr>
         </table>
     </form>
-@endsection
+@endsection -->
 	</dl>
 
   <p id="form_submit"><input type="submit" id="form_submit_button" value="登録 Register" /></p>

@@ -23,9 +23,9 @@
 		<dd class="required"><input type="text" id="product_distributor" name="product_distributor" value="{{$product['product_distributor']}}" /></dd>
 
 		<dt>営業先<span>sales department</span></dt>
-		<dd><input type="checkbox" id="product_department" name="product_destination" value="naika" />内科
-		<dd><input type="checkbox" id="product_department" name="product_destination" value="shoukaki" />消化器外科
-		<dd><input type="checkbox" id="product_department" name="product_destination" value="seikei" />整形外科
+		<dd><input type="checkbox" id="department_product1" name="product_destination" value="naika" />内科
+		<dd><input type="checkbox" id="department_product2" name="product_destination" value="shoukaki" />消化器外科
+		<dd><input type="checkbox" id="department_product3" name="product_destination" value="seikei" />整形外科
 		</dd>
 		
 		<dt>営業先<span>sales department</span></dt>

@@ -1,6 +1,6 @@
 <?php
-namespace App\Http\Controllers\Admin\Auth;
-use App\Http\Controllers\Admin\Auth;
+namespace App\Http\Controllers\Mr\Auth;
+use App\Http\Controllers\Mr\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/home';
+    protected $redirectTo = '/Mr/mr_mypage';
     /**
      * Create a new controller instance.
      *
@@ -31,11 +31,11 @@ class LoginController extends Controller
     // ログイン画面
     public function showLoginForm()
     {
-        return view('admin.auth.login'); //管理者ログインページのテンプレート
+        return view('mr.auth.login'); //MRログインページのテンプレート
     }
     protected function guard()
     {
-        return \Auth::guard('admin'); //管理者認証のguardを指定
+        return \Auth::guard('mr'); //MR認証のguardを指定
     }
     public function logout(Request $request){
         $this->guard()->logout();

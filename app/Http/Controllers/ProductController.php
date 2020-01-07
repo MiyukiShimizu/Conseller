@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //作成したモデルファイルをControllerに読み込む
 use App\Product;
 use App\Department;
+use App\Area;
 
 class ProductController extends Controller
 {
@@ -13,7 +14,8 @@ class ProductController extends Controller
     //departmentから全データを取る。
     public function getProductform (){
         $department = Department::all();
-        return view('product_apply', compact('department'));
+        $area = Area::all();
+        return view('product_apply', compact(['department','area']));
     }
 
 //product_confirmページの内容を登録する。
@@ -26,11 +28,15 @@ public function productstoreData(Request $request)
      $product->product_no = $request->product_no;  
      $product->product_price = $request->product_price;    
      $product->product_distributor = $request->product_distributor;           
+     $product->save(); 
      if (is_array($request->department_product)) {
         $product->departments()->detach();
         $product->departments()->attach($request->department_product); 
     }
-    $product->save();
+    if (is_array($request->area_product)) {
+        $product->areas()->detach();
+        $product->areas()->attach($request->area_product); 
+    }
     return redirect('/');
 }
 
@@ -44,7 +50,8 @@ public function productstoreData(Request $request)
         $product["product_no"] = $request->product_no;  
         $product["product_price"] = $request->product_price; 
         $product["product_distributor"] = $request->product_distributor;
-        $product["department_product"] = $request->department_product;  
+        $product["department_product"] = $request->department_product; 
+        $product["product_area"] = $request->product_area;   
         return view('product_confirm', compact('product')); 
     }
 

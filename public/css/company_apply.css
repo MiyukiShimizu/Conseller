@@ -3,7 +3,7 @@
 /* いらない所を削除すること */
 
 form#mail_form * {
-	margin: 0;
+	margin-top: 20px;
 	padding: 0;
 }
 
@@ -23,8 +23,7 @@ form#mail_form {
 	font-size: 150%;
 	font-weight: bold;
 	border-bottom: 1px solid #cccccc;
-	width: 90%;
-/* どうして、線が真ん中に来ないのだろう？ */
+	width: 100%;
     text-align: center;
 }
 
@@ -194,5 +193,13 @@ form#mail_form input#form_submit_button {
 	border-color: #155d74;
 	color: white;
   }
+
+.wrapper{
+	background:white;
+}
+
+.wrapper2{
+	background:white;
+}
 
 

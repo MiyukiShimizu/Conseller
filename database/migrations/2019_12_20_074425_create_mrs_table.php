@@ -14,18 +14,15 @@ class CreateMrsTable extends Migration
     public function up()
     {
         Schema::create('mrs', function (Blueprint $table) {
-            $table->increments('mr_id');
-            $table->string('mr_name');
-            $table->string('mr_address');
-            $table->string('mr_tel');  
-            $table->string('mr_mail');             
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
 
-        Schema::table('mrs', function (Blueprint $table) {
-            $table->string('mr_department')->after('mr_mail');
-            $table->string('mr_area')->after('mr_department');
-        });
     }
 
     /**

@@ -4,12 +4,11 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="css/mr_mypage1.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/mr_mypage2.css" rel="stylesheet" type="text/css" media="all" />
-
 </head>
+
 <body>
 <div id="header-wrapper">
-	<div id="header" class="container">
+	<div id="header2" class="container">
 		<div id="logo">
 			<h1>MRマイページ</h1>
 		</div>
@@ -26,7 +25,7 @@
 		<div id="content">
 			<div class="title">
 				<h2>営業状況</h2>
-            <a href="#" class="button">営業レポート参照</a>
+            <a href="mr_reportall" class="button">営業レポート参照</a>
 			</div>
          </div>
 	</div>
@@ -34,7 +33,7 @@
 		<div id="banner" class="container">
 			<div class="box-left">
 				<h2>担当製品</h2>
-			    <a href="#" class="button">担当製品一覧</a>
+			    <a href="mr_productall" class="button">担当製品一覧</a>
 			</div>
 			
 		</div>
@@ -43,7 +42,7 @@
 		<div id="banner">
 			<div class="title">
 				<h2>MR登録情報</h2>
-				<a href="#" class="button">登録情報を見る</a>
+				<a href="mr_applyinfo" class="button">登録情報を見る</a>
             </div>
          </div>	 
 	</div>

@@ -1,3 +1,4 @@
+<html>
 <head>
 
     <meta charset="utf-8">
@@ -9,6 +10,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/top_core.css" rel="stylesheet" type="text/css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"><!-- Bootstrap本体 -->
 
     <!-- Custom Fonts -->
     <link href="css/top_customfonts1.css" rel="stylesheet" type="text/css"> 
@@ -58,7 +60,7 @@
 <!-- Header -->
 <header class="masthead d-flex">
     <div class="container text-center my-auto">
-   <a class="top_login" href="{{ route('login') }}">Login</a>     
+   <a class="top_login" href="{{ route('company.login') }}">Login</a>     
         <h1 class="mb-1">Conseller</h1>
         <h3 class="mb-5">
             <em>営業マン不足、製品数不足を補い、医療機器の営業を促進！</em>
@@ -327,3 +329,8 @@ function markerEvent(i) {
         <p class="text-muted small mb-0">Copyright &copy; 株式会社メディカルラボパートナーズ</p>
     </div>
 </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><!-- Scripts（Jquery） -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script><!-- Scripts（bootstrapのjavascript） -->
+</body>
+</html>

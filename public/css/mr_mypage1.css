@@ -272,7 +272,13 @@ ul.contact li a:before
 #header
 {
     position: relative;
-    height: 130px;
+    height: 150px;
+}
+
+#header2
+{
+    position: relative;
+    height: 100px;
 }
 
 /*********************************************************************************/
@@ -390,6 +396,7 @@ ul.contact li a:before
     background: #FFF;
 }
 
+
 #page
 {
     overflow: hidden;
@@ -439,6 +446,12 @@ ul.contact li a:before
 /*********************************************************************************/
 
 .text-muted
+{
+    color: white;
+    text-align: center;
+}
+
+.text-muted2
 {
     color: white;
     text-align: center;
