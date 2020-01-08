@@ -14,7 +14,7 @@
 		</div>
 		<form action="{{route('admin.logout')}}" method="POST">
         {{csrf_field()}}
-        <button id="btn-logout" class="btn btn-danger2">管理者ログアウト</button>
+        <button id="btn-logout" class="btn2 btn-danger">管理者ログアウト</button>
         </form>
 
             <!-- <form action="{{route('company.logout')}}" method="POST">

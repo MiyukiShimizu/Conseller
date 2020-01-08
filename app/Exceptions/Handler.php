@@ -53,7 +53,7 @@ class Handler extends ExceptionHandler
         if (in_array('company', $exception->guards())) { // ここから
             return redirect()->guest('company/login');
         } // ここまで追記
-        if (in_array('mr', $exception->guards())) { // ここから
+        if (in_array('loginmr', $exception->guards())) { // ここから
             return redirect()->guest('mr/login');
         } // ここまで追記
         return redirect()->guest(route('company/login'));

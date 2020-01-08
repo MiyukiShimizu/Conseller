@@ -86,9 +86,9 @@ return [
             'model' => App\Admin::class,
         ],
 
-        'mrs' => [
+        'loginmrs' => [
             'driver' => 'eloquent',
-            'model' => App\Mr::class,
+            'model' => App\Loginmr::class,
         ]
 
     ],
@@ -120,8 +120,8 @@ return [
             'expire' => 15
         ],
 
-        'mrs' => [
-            'provider' => 'mrs',
+        'loginmrs' => [
+            'provider' => 'loginmrs',
             'table' => 'password_resets',
             'expire' => 15
         ]

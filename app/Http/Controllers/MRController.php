@@ -14,18 +14,6 @@ class MRController extends MR
         return view('mr_apply');
     }
 
-//mr_applyページで、新しいMRを登録する。確認画面に飛ぶ
-public function mrstoreData(Request $request)
-{
-     $mr = new Mr();
-     $mr->mr_name = $request->mr_name;
-     $mr->mr_address = $request->mr_address;
-     $mr->mr_tel = $request->mr_tel;  
-     $mr->mr_mail = $request->mr_mail;             
-     $mr->save();
-    return redirect('/');
-}
-
 // 飛んできたデータをPHPの変数mrに保存。
 //mr_confirmのアドレスのページに表示させる
     public function getAllMR (Request $request){
@@ -36,6 +24,18 @@ public function mrstoreData(Request $request)
         $mr["mr_mail"] = $request->mr_mail; 
         return view('mr_confirm', compact('mr')); 
     }
+
+//mr_applyページで、新しいMRを登録する。
+public function mrstoreData(Request $request)
+{
+     $mr = new Mr();
+     $mr->mr_name = $request->mr_name;
+     $mr->mr_address = $request->mr_address;
+     $mr->mr_tel = $request->mr_tel;  
+     $mr->mr_mail = $request->mr_mail;             
+     $mr->save();
+    return redirect('/');
+}
 
 //mrallのアドレスのページに一覧表示させる。
     public function indexMR (){

@@ -29,18 +29,6 @@
 
 		<dt>メールアドレス<span>Mail Address</span></dt>
 		<dd class="required"><input type="text" id="mr_mail" name="mr_mail" value="" /></dd>
-		
-        <dt>可能な営業先<span>sales department</span></dt>
-		@foreach((array)$department as $item)
-		<dd><input type="checkbox" id="" name="mr_department[]" value="{{$item['mr_department']}}" />{{$item['mr_department']}}
-	    @endforeach
-		</dd>
-		
-		<dt>営業エリア<span>sales area</span></dt>
-		@foreach($area as $areaitem)
-		<dd><input type="checkbox" id="" name="product_area[]" value="{{$areaitem['area_name']}}" />{{$areaitem['area_name']}}
-	    @endforeach
-	    </dd>
         
 	</dl>
 	

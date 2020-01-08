@@ -137,7 +137,7 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
     });
 
 //8. MRログイン,ログアウト
-    Route::group(['prefix' => 'mr', 'middleware' => 'guest:mr'], function() {
+    Route::group(['prefix' => 'mr', 'middleware' => 'guest:loginmr'], function() {
     Route::get('/mr_mypage', function () {
         return view('mr.mr_mypage');
     });
@@ -146,7 +146,7 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
     Route::get('register', 'Mr\Auth\RegisterController@showRegisterForm')->name('mr.register');
     Route::post('register', 'Mr\Auth\RegisterController@register')->name('mr.register');
     });
-    Route::group(['prefix' => 'mr', 'middleware' => 'auth:mr'], function(){
+    Route::group(['prefix' => 'mr', 'middleware' => 'auth:loginmr'], function(){
     Route::post('logout', 'Mr\Auth\LoginController@logout')->name('mr.logout');
     Route::get('mr_mypage', 'Mr\HomeController@index')->name('mr.mr_mypage');
     });

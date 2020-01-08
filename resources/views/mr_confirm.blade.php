@@ -27,17 +27,6 @@
 		<dt>メールアドレス<span>Mail Address</span></dt>
 		<dd class="required"><input type="text" id="mr_mail" name="mr_mail" value="{{$mr['mr_mail']}}" /></dd>
 		
-		<dt>可能な営業先<span>sales department</span></dt>
-		@foreach($departments as $item)
-		<dd><input type="hidden"id="" name="mr_department[]" value="{{$item}}" />{{$item}} 
-	    @endforeach
-		</dd>
-		
-		<dt>営業エリア<span>sales area</span></dt>
-		@foreach($area as $areaitem)
-		<dd><input type="hidden" id="" name="mr_area[]" value="{{$areaitem['area_name']}}" />{{$areaitem['area_name']}}
-	    @endforeach
-	    </dd>
 	</dl>
 
   <p id="form_submit"><input type="submit" class="form_submit_button" value="登録 Register" /></p>

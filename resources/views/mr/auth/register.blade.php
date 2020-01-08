@@ -19,7 +19,7 @@
         <div class="col-md-8">
             <div class="card">
             <form method="POST" action="{{ route('mr.register') }}" class="form-signin">
-                     <h3 class="form-signin-heading">{{ __('企業マイページ登録') }}</h3>
+                     <h3 class="form-signin-heading">{{ __('MRマイページ登録') }}</h3>
                 			<hr class="colorgraph"><br>
                 <div class="card-body">
                    

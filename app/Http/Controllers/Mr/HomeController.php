@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Mr;  // Mrの追加
+namespace App\Http\Controllers\Loginmr;  // Mrの追加
 use App\Http\Controllers\Controller;   // 追加
 use Illuminate\Http\Request;
 class HomeController extends Controller

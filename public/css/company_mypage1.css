@@ -227,7 +227,7 @@ ul.contact li a:before
     font-size: 16;
 }
 
-.btn-danger2
+.btn2
 {
     background: white;
     padding: 1em 2em;
@@ -237,9 +237,9 @@ ul.contact li a:before
 
 /* なぜ、右に寄らないのだろう。 */
 .btn-logout{
-    position: relative;
-    align-items: right;
-
+    /* position: relative; */
+    width: 50px;
+    margin-left: auto;
 }
 
 .button

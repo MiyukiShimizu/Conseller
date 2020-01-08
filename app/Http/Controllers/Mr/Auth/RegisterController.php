@@ -1,6 +1,6 @@
 <?php
-namespace App\Http\Controllers\Mr\Auth;
-use App\Mr;
+namespace App\Http\Controllers\Loginmr\Auth;
+use App\Loginmr;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -23,7 +23,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/Mr/mr_mypage';
+    protected $redirectTo = '/mr/mr_mypage';
     /**
      * Create a new controller instance.
      *
@@ -51,7 +51,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \App\Mr
      */
     protected function create(array $data)
     {
@@ -62,6 +62,6 @@ class RegisterController extends Controller
         ]);
     }
     protected function guard(){
-        return \Auth::guard('mr'); //MR認証のguardを指定
+        return \Auth::guard('loginmr'); //MR認証のguardを指定
     }
 }

@@ -3,7 +3,7 @@
 /* いらない所を削除すること */
 
 form#mail_form * {
-	margin-top: 20px;
+	margin: 0;
 	padding: 0;
 }
 
@@ -153,6 +153,7 @@ form#mail_form p#form_submit {
 	margin: 0 auto;
 	padding: 15px 0;
 	border-top: 1px solid #cccccc;
+    font-size: 16;
 }
 
 form#mail_form input[type="button"] {
@@ -178,7 +179,7 @@ form#mail_form input#form_submit_button {
 
 .form_submit_button{
 	display: inline-block;
-	padding: 0.3em 1em;
+	padding: 1em 2em;
 	text-decoration: none;
 	color:#1D809F;
 	background: #1D809F;
@@ -186,6 +187,8 @@ form#mail_form input#form_submit_button {
 	border-radius: 3px;
 	transition: .4s;
 	color: white;
+	font-size: 16;
+
   }
   
   .form_submit_button:hover {
