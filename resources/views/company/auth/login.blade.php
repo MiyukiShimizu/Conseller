@@ -17,7 +17,7 @@
 <div class = "container">
 	<div class="wrapper">
     
-    <form method="POST" action="{{ route('company.login') }}" name="Login_Form" class="form-signin">
+    <form method="POST" action="{{route('company.login', ['id' => 1])}}" name="Login_Form" class="form-signin">
                     {{ csrf_field() }} 
             <h3 class="form-signin-heading">企業マイページ　ログイン</h3>
 			<hr class="colorgraph"><br>
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                         </div>  
-                   初めてログインされる方は、<a href="{{ route('company.register') }}">こちら </a>                   
+                   初めてログインされる方は、<a href="{{ route('company.register') , ['id' => 1]}}">こちら </a>                   
                 <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-lg btn-primary btn-block">

@@ -20,42 +20,39 @@
     <!-- Custom CSS -->
     <link href="css/top_custom.css" rel="stylesheet" type="text/css"> 
 
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/5b323c5c96.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body id="page-top">
 <!-- Navigation -->
-<a class="menu-toggle rounded" href="#">
-    <i class="fa fa-bars"></i>
-</a>
-<nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-            <a class="js-scroll-trigger" href="#page-top">Conseller</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#page-top">Home</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#about">Consellerのしくみ</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#portfolio">営業先</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#">現在の状況</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#contact">お問い合わせ</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="{{url('/company/login')}}">企業ログイン</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="{{url('/mr/login')}}">MRログイン</a>
-        </li>
 
-    </ul>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mt-3 mb-3">
+<a class="navbar-brand" href="#">Conseller</a>
+<div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Consellerのしくみ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">営業先</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/company/login')}}">企業ログイン</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/mr/login')}}">MRログイン</a>
+                </li>
+            </ul>
+        </div> 
 </nav>
+<a class="menu-toggle rounded" href="#">
+    <div style="font-size: 3rem;">
+        <i class="fa fa-bars" fa-10x></i>
+    </div>
+</a>
+
 
 <!-- Header -->
 <header class="masthead d-flex">
@@ -94,37 +91,45 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
             <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-screen-smartphone"></i>
+                <div style="font-size: 5rem;">
+                    <i class="far fa-hand-point-up" fa-10x ></i>
+                </div>
             </span>
                 <h4>
-                    <strong>製品を登録</strong>
+                    <strong>1）製品を登録</strong>
                 </h4>
                 <p class="text-faded mb-0">製品、診療科、販促資料を<br>登録します</p>
             </div>
             <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
             <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-pencil"></i>
+                <div style="font-size: 4rem;">
+                    <i class="fas fa-coffee" fa-sm></i>
+                </div>
             </span>
                 <h4>
-                    <strong>他社の製品登録を待つ</strong>
+                    <strong>2）他社の製品登録を待つ</strong>
                 </h4>
                 <p class="text-faded mb-0">同じ診療科に向けた<br>他社の製品登録を待ちます</p>
             </div>
             <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
             <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-like"></i>
+                <div style="font-size: 5.5rem">
+                     <i class="fas fa-running" fa-3x></i>
+                </div>
             </span>
                 <h4>
-                    <strong>5製品の登録で営業開始</strong>
+                    <strong>3）5製品の登録で営業開始</strong>
                 </h4>
                 <p class="text-faded mb-0">1診療科あたり5製品集まったら、営業マン1名が営業を開始します</p>
             </div>
             <div class="col-lg-3 col-md-6">
             <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-mustache"></i>
+                <div style="font-size:4.5rem;">
+                    <i class="far fa-list-alt" fa-></i>
+                </div>
             </span>
                 <h4>
-                    <strong>状況を確認する</strong>
+                    <strong>4）状況を確認する</strong>
                 </h4>
                 <p class="text-faded mb-0">毎月の営業先、営業件数、<br>受けた質問を確認できます</p>
             </div>
@@ -133,7 +138,7 @@
 </section>
 
 <!-- Map -->
-<section class="content-section" id="portfolio" style="height: 58%;>
+<section class="content-section" id="portfolio" style="height: 58%";>
 <div class="container">
     <div class="content-section-heading text-center">
     <h3 class="text-secondary mb-0">Customer</h3>    
@@ -150,15 +155,15 @@
     <style>
       #map {
         height: 100%;
-      }
+        }
+      
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
       }
     </style>
-  </head>
-  <body>
+  
     <div id="map" style="height: 85%; width: 100%; margin: 2rem auto 0;"></div>
        <!-- jqueryの読み込む -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -247,13 +252,6 @@ function markerEvent(i) {
     </small>  
 </section>
 
-<!-- Call to Action -->
-<section class="content-section bg-primary text-white">
-    <div class="container text-center">
-        <h2 class="mb-4">導入・お問い合わせはこちら</h2>
-        <a href="#" class="btn btn-xl btn-light mr-4">お問い合わせ</a>
-    </div>
-</section>
 
 
 <!-- Portfolio -->
@@ -320,6 +318,13 @@ function markerEvent(i) {
             </div>
         </div>
     </section>
+<!-- Call to Action -->
+<section class="content-section bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">導入・お問い合わせはこちら</h2>
+        <a href="#" class="btn btn-xl btn-light mr-4">お問い合わせ</a>
+    </div>
+</section>
     
 
 

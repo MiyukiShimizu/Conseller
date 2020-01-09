@@ -108,6 +108,10 @@
    background: #1D809F;
    border-left: 1px solid rgba(255, 255, 255, 0.1); }
  
+.navbar{
+  background:#ecb807 
+}
+
  .sidebar-nav {
    position: absolute;
    top: 0;
@@ -296,7 +300,17 @@
  .text-secondary {
    color: #ecb807 !important; }
  
+.fa{
+  margin-top: 9px;
+}
 
+.far{
+  margin-top: 9px;
+}
+
+.fas{
+  margin-top: 7px;
+}
 
 
 

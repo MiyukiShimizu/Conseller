@@ -18,7 +18,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            <form method="POST" action="{{ route('company.register') }}" class="form-signin">
+            <form method="POST" action="{{ route('company.register'), ['id' => 1] }}" class="form-signin">
                      <h3 class="form-signin-heading">{{ __('企業マイページ登録') }}</h3>
                 			<hr class="colorgraph"><br>
                 <div class="card-body">

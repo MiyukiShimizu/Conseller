@@ -5,7 +5,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 class RegisterController extends Controller
+//Requestを入れてもらった。
 {
     /*
     |--------------------------------------------------------------------------
@@ -23,7 +25,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/company/company_mypage';
+    protected $redirectTo = '/company/{id}/company_mypage';
     /**
      * Create a new controller instance.
      *
@@ -31,8 +33,20 @@ class RegisterController extends Controller
      */
     public function showRegisterForm()
     {
-        return view('company.auth.register');  // 企業用テンプレート
+        return view('company.auth.{id}.register');  // 企業用テンプレート
     }
+
+    //教えてもらったコード
+    // public function register(Request $request)
+    // {
+    //     return $request["name"];
+    // }
+
+    public function register()
+    {
+        return redirect('company/{id}/company_mypage'); 
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
