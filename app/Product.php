@@ -17,5 +17,10 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Area');
     }
+    //一対多の逆向きのリレーション
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
 

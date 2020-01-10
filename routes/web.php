@@ -123,7 +123,7 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
 
 //6. 企業ログイン,ログアウト
     Route::group(['prefix' => 'company', 'middleware' => 'guest:user'], function() {
-    Route::get('/company_mypage', function () {
+    Route::get('{id}/company_mypage', function () {
         return view('company.company_mypage');
     });
     Route::get('login', 'Company\Auth\LoginController@showLoginForm')->name('company.login');
@@ -132,13 +132,17 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
     Route::post('register', 'Company\Auth\RegisterController@register')->name('company.register');
     });
     Route::group(['prefix' => 'company', 'middleware' => 'auth:user'], function(){
-    Route::post('logout', 'Company\Auth\LoginController@logout')->name('company.logout');
-    Route::get('company_mypage', 'Company\HomeController@index')->name('company.company_mypage');
+    Route::post('company/logout', 'Company\Auth\LoginController@logout')->name('company.logout');
+    Route::get('home', 'Company\HomeController@index')->name('home');
     });
+    Route::get('company/home', function(){
+        return view('top');
+    });
+
 
 //8. MRログイン,ログアウト
     Route::group(['prefix' => 'mr', 'middleware' => 'guest:loginmr'], function() {
-    Route::get('/mr_mypage', function () {
+    Route::get('{id}/mr_mypage', function () {
         return view('mr.mr_mypage');
     });
     Route::get('login', 'Mr\Auth\LoginController@showLoginForm')->name('mr.login');
@@ -148,7 +152,10 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
     });
     Route::group(['prefix' => 'mr', 'middleware' => 'auth:loginmr'], function(){
     Route::post('logout', 'Mr\Auth\LoginController@logout')->name('mr.logout');
-    Route::get('mr_mypage', 'Mr\HomeController@index')->name('mr.mr_mypage');
+    Route::get('mr/home', 'Mr\HomeController@index')->name('mr.home');
+    });
+    Route::get('mr/home', function(){
+        return view('top');
     });
 
 //9.管理者用ページへのログイン、ログアウト

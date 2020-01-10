@@ -3,15 +3,14 @@
 <title></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="css/company_mypage1.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/company_mypage2.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ asset('css/company_mypage1.css') }}" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 <body>
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1>企業マイページ</h1>Ro
+			<h1>企業マイページ</h1>
 			<form action="{{route('company.logout')}}" method="POST">
 			{{csrf_field()}}
     		<button id="btn-logout" class="btn btn-danger">企業ログアウト</button>
@@ -25,7 +24,6 @@
 		<div id="content">
 			<div class="title">
 				<h2>営業状況</h2>
-				<span class="byline">今月の営業状況</span>
 				<a href="company_reportall" class="button">営業レポート参照</a>
             </div>
          </div>

@@ -22,7 +22,7 @@ form#mail_form {
 .title{
 	font-size: 150%;
 	font-weight: bold;
-	border-bottom: 1px solid #cccccc;
+	border-bottom: 1px solid #1D809F;
 	width: 100%;
     text-align: center;
 }
@@ -188,6 +188,8 @@ form#mail_form input#form_submit_button {
 	transition: .4s;
 	color: white;
 	font-size: 16;
+	width: 100px;
+	height: 40px
 
   }
   

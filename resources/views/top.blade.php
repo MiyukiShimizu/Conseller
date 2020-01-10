@@ -154,8 +154,9 @@
     <meta charset="utf-8">
     <style>
       #map {
-        height: 100%;
-        }
+          height: 100%;}
+        
+        
       
       html, body {
         height: 100%;

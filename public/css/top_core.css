@@ -52,6 +52,9 @@
  .map iframe {
    pointer-events: none; }
  
+  .viewport {
+    height: 10px; }
+
  .scroll-to-top {
    position: fixed;
    right: 15px;

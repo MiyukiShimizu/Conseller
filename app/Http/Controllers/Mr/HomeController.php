@@ -11,6 +11,6 @@ class HomeController extends Controller
  */
 public function index()
 {
-    return view('mr.mr_mypage');   // MR用のテンプレート
+    return view('mr.{id}.mr_mypage');   // MR用のテンプレート
 }
 }

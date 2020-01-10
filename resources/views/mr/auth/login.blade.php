@@ -17,7 +17,7 @@
 <div class = "container">
 	<div class="wrapper">
     
-    <form method="POST" action="{{ route('mr.login') }}" name="Login_Form" class="form-signin">
+    <form method="POST" action="{{route('mr.login')}}" name="Login_Form" class="form-signin">
                     {{ csrf_field() }} 
             <h3 class="form-signin-heading">MRマイページ　ログイン</h3>
 			<hr class="colorgraph"><br>

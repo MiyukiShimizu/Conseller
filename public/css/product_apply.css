@@ -22,8 +22,8 @@ form#mail_form {
 .title{
 	font-size: 150%;
 	font-weight: bold;
-	border-bottom: 1px solid #cccccc;
-	width: 90%;
+	border-bottom: 1px solid #155d74;
+	width: 100%;
 /* どうして、線が真ん中に来ないのだろう？ */
     text-align: center;
 }
@@ -187,6 +187,9 @@ form#mail_form input#form_submit_button {
 	border-radius: 3px;
 	transition: .4s;
 	color: white;
+	font-size: 16;
+	width: 100px;
+	height: 40px
   }
   
   .form_submit_button:hover {

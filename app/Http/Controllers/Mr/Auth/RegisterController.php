@@ -23,7 +23,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/mr/mr_mypage';
+    protected $redirectTo = '/mr/{id}/mr_mypage';
     /**
      * Create a new controller instance.
      *
@@ -39,6 +39,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+    public function register()
+    {
+        return redirect('mr/{id}/mr_mypage'); 
+    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -48,20 +54,15 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function register()
-    {
-        return view('mr.mr_mypage'); 
-    }
-
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Mr
+     * @return \App\User
      */
     protected function create(array $data)
     {
-        return Mr::create([
+        return Loginmr::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

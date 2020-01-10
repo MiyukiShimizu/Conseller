@@ -225,6 +225,7 @@ ul.contact li a:before
     padding: 1em 2em;
     color: black;
     font-size: 16;
+    margin-left: auto;
 }
 
 .btn2
@@ -257,6 +258,7 @@ ul.contact li a:before
     text-transform: uppercase;
     font-weight: 600;
     color: #FFF;
+    margin-right:30px;
 
 }
 

@@ -33,7 +33,7 @@ class RegisterController extends Controller
      */
     public function showRegisterForm()
     {
-        return view('company.auth.{id}.register');  // 企業用テンプレート
+        return view('company.auth.register');  // 企業用テンプレート
     }
 
     //教えてもらったコード

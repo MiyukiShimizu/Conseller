@@ -3,7 +3,7 @@
 <title></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="css/company_mypage1.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ asset('css/company_mypage1.css') }}" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 <body>

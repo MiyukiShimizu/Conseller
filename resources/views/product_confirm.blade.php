@@ -46,20 +46,8 @@
 			<input type="hidden"id="" name="product_area[]" value="{{$areaitem}}" />{{$areaitem}} 
 		</dd>
 		@endforeach
-     <!-- 画像のアップロード -->
-		<!-- @section('body')
-        <form action="image_complete" method="post">
-        @csrf
-        <table border="1">
-            <tr>
-                <td>製品写真</td>
-                <td><img src="{{ $data['read_temp_path'] }}" width="200" height="130"></td>
-            </tr>
-        </table>
-    </form>
-@endsection -->
 	</dl>
 
-  <p id="form_submit"><input type="submit" id="form_submit_button" value="登録 Register" /></p>
+  <p id="form_submit"><input type="submit" class="form_submit_button" value="登録 Register" /></p>
 </form>
 

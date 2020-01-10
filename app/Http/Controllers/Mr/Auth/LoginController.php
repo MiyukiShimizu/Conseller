@@ -22,7 +22,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/mr/mr_mypage';
+    protected $redirectTo = '/mr/{id}/mr_mypage';
     /**
      * Create a new controller instance.
      *
@@ -40,6 +40,6 @@ class LoginController extends Controller
     public function logout(Request $request){
         $this->guard()->logout();
         $request->session()->invalidate();
-        return $this->loggedOut($request) ?: redirect('/');  // ログアウト後のリダイレクト先
+        return $this->loggedOut($request) ?: redirect('mr/home');  // ログアウト後のリダイレクト先
 }
 }
