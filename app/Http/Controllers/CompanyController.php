@@ -19,7 +19,7 @@ class CompanyController extends Controller
     public function companystoreData(Request $request)
     {
          $company = new Company();
-        //  $company->company_id = $request->company_id;自動でつくものは書かない。
+        //  $company->id = $request->id;自動でつくものは書かない。
          $company->company_name = $request->company_name;
          $company->tantou_name = $request->tantou_name;
          $company->company_address = $request->company_address;
@@ -50,8 +50,8 @@ class CompanyController extends Controller
     }
 
 // 更新画面を表示する。
-    public function editCompany ($company_id){
-        $company = Company::where("company_id",$company_id)->first();
+    public function editCompany ($id){
+        $company = Company::where("id",$id)->first();
         // $company->company_name      = $request->company_name;
         // $company->tantou_name       = $request->tantou_name;
         // $company->company_address   = $request->company_address;
@@ -63,7 +63,7 @@ class CompanyController extends Controller
 
     // companiesテーブル内のデータを更新する。
     public function updateCompany (Request $request){
-        $company = Company::where("company_id",$request->company_id)->first();
+        $company = Company::where("id",$request->id)->first();
         $company->company_name      = $request->company_name;
         $company->tantou_name       = $request->tantou_name;
         $company->company_address   = $request->company_address;
@@ -75,7 +75,7 @@ class CompanyController extends Controller
 
     // companiesテーブル内の特定のデータを削除する。
     public function deleteCompany (Request $request){
-        Company::destroy($request->company_id);
+        Company::destroy($request->id);
         return redirect('companyall'); 
     }
 

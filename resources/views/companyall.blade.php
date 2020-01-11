@@ -10,8 +10,8 @@
 <!-- 会社一覧 -->
 <tr>
 <td class= "table-text">
-  <div>{{ $company["company_id"]}}
-     <input type="hidden" name="company_id" value="{{$company['company_id']}}">
+  <div>{{ $company["id"]}}
+     <input type="hidden" name="id" value="{{$company['id']}}">
   </div>
 </td>
 <td class= "table-text">
@@ -48,7 +48,7 @@
 
 <!-- 修正ボタン -->
 <td>
-  <a href="{{ url('companyall/edit/'.$company->company_id)}}">
+  <a href="{{ url('companyall/edit/'.$company->id)}}">
     修正
 </a>
 
@@ -56,10 +56,10 @@
 
 <!-- 削除ボタン -->
 <td>
-  <form action="{{url('companyall/delete/'. $company->company_id)}}" method=POST>
+  <form action="{{url('companyall/delete/'. $company->id)}}" method=POST>
   {{csrf_field()}}
   {{method_field('DELETE')}}
-  <input type="hidden" name="company_id" value="{{$company['company_id']}}">
+  <input type="hidden" name="id" value="{{$company['id']}}">
   <button type="submit" class="btn-delete">
   削除
   </button>

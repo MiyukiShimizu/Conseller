@@ -1,4 +1,4 @@
-<form action="{{url('companyall/update/'. $company->company_id)}}" method="POST">
+<form action="{{url('companyall/update/'. $company->id)}}" method="POST">
     {{ csrf_field() }}	
 	<h1 class="title">MRデータ編集</h1>
 	<link href="css/company_apply.css" rel="stylesheet" type="text/css"> 

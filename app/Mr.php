@@ -4,6 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mr extends Model
 {
-    protected $primaryKey = 'product_id';
+    protected $primaryKey = 'id';
    
 }

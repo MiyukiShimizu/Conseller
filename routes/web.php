@@ -7,7 +7,7 @@
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group. Now set something great!
 |
 */
 
@@ -31,16 +31,16 @@ Route::post('/company_confirm', 'CompanyController@getAllCompany');
 Route::get('/companyall', 'CompanyController@indexCompany');
 
 //更新画面を表示する。
-Route::get('/companyall/edit/{company_id}', 'CompanyController@editCompany');
+Route::get('/companyall/edit/{id}', 'CompanyController@editCompany');
 
 //更新内容を確認する。
-Route::patch('/companyall/edit/{company_id}', 'CompanyController@editconfirmCompany');
+Route::patch('/companyall/edit/{id}', 'CompanyController@editconfirmCompany');
 
 //データを更新する（companyallページで、CompanyControllerのupdateCompanyを行う。）
-Route::post('/companyall/update/{company_id}', 'CompanyController@updateCompany');
+Route::post('/companyall/update/{id}', 'CompanyController@updateCompany');
 
 //company一覧ページから企業を削除する。（companyallページで、CompanyControllerのdeleteCompanyを行う。）
-Route::delete('/companyall/delete/{company_id}', 'CompanyController@deleteCompany');
+Route::delete('/companyall/delete/{id}', 'CompanyController@deleteCompany');
 
 
 //3. 製品登録
@@ -57,16 +57,16 @@ Route::post('/product_confirm', 'ProductController@getAllproduct');
 Route::get('/productall', 'ProductController@indexProduct');
 
 //更新画面を表示する。
-Route::get('/productall/edit/{product_id}', 'ProductController@editProduct');
+Route::get('/productall/edit/{id}', 'ProductController@editProduct');
 
 //更新内容を確認する。
-Route::patch('/productall/edit/{product_id}', 'ProductController@editconfirmProduct');
+Route::patch('/productall/edit/{id}', 'ProductController@editconfirmProduct');
 
 //データを更新する（comproductallページで、ProductControllerのupdateProductを行う。）
-Route::post('/productall/update/{product_id}', 'ProductController@updateProduct');
+Route::post('/productall/update/{id}', 'ProductController@updateProduct');
 
 //company一覧ページから企業を削除する。（productallページで、ProductControllerのdeleteProductを行う。）
-Route::delete('/productall/delete/{product_id}', 'ProductController@deleteProduct');
+Route::delete('/productall/delete/{id}', 'ProductController@deleteProduct');
 
 
 //4. MR登録
@@ -178,9 +178,9 @@ Route::get('/image_input', 'ImageController@getImageInput');
 Route::post('/image_confirm', 'ImageController@postImageConfirm');
 Route::post('/image_complete', 'ImageController@postImageComplete');
 
-//11. トップページ
-//アドレスが/homeの時は、top.blade.phpを表示する。
-// Route::get('/home', function () {
+// // 11. トップページ
+// アドレスが/homeの時は、top.blade.phpを表示する。
+// Route::get('/home', function(){
 //     return view('top');
 // });
 

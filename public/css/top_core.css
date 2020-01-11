@@ -115,6 +115,10 @@
   background:#ecb807 
 }
 
+.nav-item{
+  margin-right: 20px;
+}
+
  .sidebar-nav {
    position: absolute;
    top: 0;

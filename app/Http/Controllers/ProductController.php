@@ -62,8 +62,8 @@ public function productstoreData(Request $request)
     }
 
 // 更新画面を表示する。
-    public function editProduct ($product_id){
-    $product = Product::where("product_id",$product_id)->first();
+    public function editProduct ($id){
+    $product = Product::where("id",$id)->first();
     return view('product_edit', compact('product'));
 }
 
@@ -81,7 +81,7 @@ public function productstoreData(Request $request)
 
 // productsテーブル内の特定のデータを削除する。
     public function deleteProduct (Request $request){
-    Product::destroy($request->product_id);
+    Product::destroy($request->id);
     return redirect('productall'); 
     }
 

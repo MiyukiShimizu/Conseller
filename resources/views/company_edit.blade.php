@@ -1,4 +1,4 @@
-<form action="{{url('companyall/update/'. $company->company_id)}}" method="POST">
+<form action="{{url('companyall/update/'. $company->id)}}" method="POST">
     {{ csrf_field() }}	
 	<h1 class="title">データ編集</h1>
 	<link href="css/company_apply.css" rel="stylesheet" type="text/css"> 
@@ -21,7 +21,7 @@
 	</dl>
 
 <!-- id値を送信 -->
-<input type="hidden" name="company_id" value="{{$company['company_id']}}">	
+<input type="hidden" name="id" value="{{$company['id']}}">	
     <p id="form_submit"><input type="submit" id="form_submit_button" value="保存 Save" /></p>
     <a class="btn btn-link pull-right" href="">
     戻る

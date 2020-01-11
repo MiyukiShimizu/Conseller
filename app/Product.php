@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $primaryKey = 'product_id';
+    protected $primaryKey = 'id';
     //Department情報を取る
     public function departments()
     {

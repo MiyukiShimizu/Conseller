@@ -15,15 +15,15 @@ class CreateDepartmentProductTable extends Migration
     {
         Schema::create('department_product', function (Blueprint $table) {
             $table->unsignedInteger('department_department_id');
-            $table->unsignedInteger('product_product_id');
-            $table->primary(['department_department_id', 'product_product_id'],'department_product');
+            $table->unsignedInteger('product_id');
+            $table->primary(['department_department_id', 'product_id'],'department_product');
         //外部キー制約
             $table->foreign('department_department_id')
                   ->references('department_id')
                   ->on('departments')
                   ->onDelete('cascade');
-            $table->foreign('product_product_id')
-                  ->references('product_id')
+            $table->foreign('product_id')
+                  ->references('id')
                   ->on('products')
                   ->onDelete('cascade');
         });

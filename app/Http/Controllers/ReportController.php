@@ -59,7 +59,7 @@ class ReportController extends Controller
 
     // reportsテーブル内のデータを更新する。
     public function updateReport (Request $request){
-        $report = Company::where("company_id",$request->company_id)->first();
+        $report = Company::where("id",$request->id)->first();
         $report->report_name          = $request->report_name;
         $report->report_date          = $request->report_date;
         $report->report_hospital      = $request->report_hospital;
