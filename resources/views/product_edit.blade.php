@@ -1,4 +1,4 @@
-<form action="{{url('productall/update/'. $product->product_id)}}" method="POST">
+<form action="{{url('productall/update/'. $product->id)}}" method="POST">
     {{ csrf_field() }}	
 	<h1 class="title">製品データ編集</h1>
 	<link href="css/company_apply.css" rel="stylesheet" type="text/css"> 
@@ -44,7 +44,7 @@
 </dl>
 
 <!-- id値を送信 -->
-<input type="hidden" name="product_id" value="{{$product['product_id']}}">	
+<input type="hidden" name="id" value="{{$product['id']}}">	
     <p id="form_submit"><input type="submit" id="form_submit_button" value="保存 Save" /></p>
     <a class="btn btn-link pull-right" href="">
     戻る

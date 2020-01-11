@@ -11,8 +11,8 @@
 <!-- 製品一覧 -->
 <tr>
 <td class= "table-text">
-  <div>{{ $product["product_id"]}}
-     <input type="hidden" name="product_id" value="{{$product['product_id']}}">
+  <div>{{ $product["id"]}}
+     <input type="hidden" name="id" value="{{$product['id']}}">
   </div>
 </td>
 <td class= "table-text">
@@ -57,7 +57,7 @@
 <button type="submit" class="btn-update">
   修正
   </button>
-  <a href="{{ url('productall/edit/'.$product->product_id)}}">
+  <a href="{{ url('productall/edit/'.$product->id)}}">
     修正
 </a>
 
@@ -65,10 +65,10 @@
 
 <!-- 削除ボタン -->
 <td>
-  <form action="{{url('productall/delete/'. $product->product_id)}}" method=POST>
+  <form action="{{url('productall/delete/'. $product->id)}}" method=POST>
   {{csrf_field()}}
   {{method_field('DELETE')}}
-  <input type="hidden" name="product_id" value="{{$product['product_id']}}">
+  <input type="hidden" name="id" value="{{$product['id']}}">
   <button type="submit" class="btn-delete">
   削除
   </button>

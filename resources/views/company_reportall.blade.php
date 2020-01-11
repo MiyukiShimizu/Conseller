@@ -74,7 +74,7 @@
 </td>
 </tr> -->
 
-</tr>  -->
+</tr> 
 <!-- @endforeach -->
 </table>
 </div>

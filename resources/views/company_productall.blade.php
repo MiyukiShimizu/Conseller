@@ -50,7 +50,7 @@
 
 <!-- 修正ボタン -->
 <td>
-  <a href="{{ url('productall/edit/'.$product->product_id)}}" class="btn-update">
+  <a href="{{ url('productall/edit/'.$product->id)}}" class="btn-update">
     修正
   </a>
 </td>

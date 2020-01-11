@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 //作成したモデルファイルをControllerに読み込む
 use App\Company;
+use App\Product;
 
 class CompanyController extends Controller
 {
@@ -87,5 +88,12 @@ class CompanyController extends Controller
     {
         return view('company/company_mypage');
     }
+
+    public function companyindexProduct (){
+        $product_name = Company::find(1)->products()->get();
+        return view('company_productall', compact('products'));
+        }
+
+
 
 }

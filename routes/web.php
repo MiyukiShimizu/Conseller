@@ -56,6 +56,9 @@ Route::post('/product_confirm', 'ProductController@getAllproduct');
 //データの一覧を表示する（companyallページでは、ProductControllerのindexProductを行う。）
 Route::get('/productall', 'ProductController@indexProduct');
 
+//企業ごとのデータの一覧を表示する（company_productallページでは、ProductControllerのcompanyindexProductを行う。）
+Route::get('/company_productall', 'CompanyController@companyindexProduct');
+
 //更新画面を表示する。
 Route::get('/productall/edit/{id}', 'ProductController@editProduct');
 
