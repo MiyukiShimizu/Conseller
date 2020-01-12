@@ -151,7 +151,7 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
     Route::post('register', 'Mr\Auth\RegisterController@register')->name('mr.register');
     });
     Route::group(['prefix' => 'mr', 'middleware' => 'auth:loginmr'], function(){
-    Route::get('{id}/mr_mypage', function () {
+    Route::get('mr_mypage', function () {
         return view('mr.mr_mypage');
     });
     Route::post('logout', 'Mr\Auth\LoginController@logout')->name('mr.logout');
