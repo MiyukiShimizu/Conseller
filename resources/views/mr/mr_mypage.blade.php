@@ -10,7 +10,7 @@
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1>MRマイページ</h1>Ro
+			<h1>MRマイページ</h1>
 			<form action="{{route('mr.logout')}}" method="POST">
 			{{csrf_field()}}
     		<button id="btn-logout" class="btn btn-danger">MRログアウト</button>
