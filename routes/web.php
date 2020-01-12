@@ -126,15 +126,15 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
 
 //6. 企業ログイン,ログアウト
     Route::group(['prefix' => 'company', 'middleware' => 'guest:user'], function() {
-    Route::get('{id}/company_mypage', function () {
-        return view('company.company_mypage');
-    });
     Route::get('login', 'Company\Auth\LoginController@showLoginForm')->name('company.login');
     Route::post('login', 'Company\Auth\LoginController@login')->name('company.login');
     Route::get('register', 'Company\Auth\RegisterController@showRegisterForm')->name('company.register');
     Route::post('register', 'Company\Auth\RegisterController@register')->name('company.register');
     });
     Route::group(['prefix' => 'company', 'middleware' => 'auth:user'], function(){
+    Route::get('company_mypage', function () {
+        return view('company.company_mypage');
+    });
     Route::post('company/logout', 'Company\Auth\LoginController@logout')->name('company.logout');
     Route::get('home', 'Company\HomeController@index')->name('home');
     });
@@ -145,15 +145,15 @@ Route::delete('/reportall/delete/{report_id}', 'ReportController@deleteReport');
 
 //8. MRログイン,ログアウト
     Route::group(['prefix' => 'mr', 'middleware' => 'guest:loginmr'], function() {
-    Route::get('{id}/mr_mypage', function () {
-        return view('mr.mr_mypage');
-    });
     Route::get('login', 'Mr\Auth\LoginController@showLoginForm')->name('mr.login');
     Route::post('login', 'Mr\Auth\LoginController@login')->name('mr.login');
     Route::get('register', 'Mr\Auth\RegisterController@showRegisterForm')->name('mr.register');
     Route::post('register', 'Mr\Auth\RegisterController@register')->name('mr.register');
     });
     Route::group(['prefix' => 'mr', 'middleware' => 'auth:loginmr'], function(){
+    Route::get('{id}/mr_mypage', function () {
+        return view('mr.mr_mypage');
+    });
     Route::post('logout', 'Mr\Auth\LoginController@logout')->name('mr.logout');
     Route::get('mr/home', 'Mr\HomeController@index')->name('mr.home');
     });

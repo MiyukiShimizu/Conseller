@@ -18,7 +18,13 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            if ($guard== 'user'){
+                return redirect('company/company_mypage');
+            } 
+            if ($guard== 'loginmr'){
+                return redirect('mr/mr_mypage');
+            } 
+        return redirect('/');
         }
 
         return $next($request);

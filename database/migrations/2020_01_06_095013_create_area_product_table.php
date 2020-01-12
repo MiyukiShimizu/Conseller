@@ -23,7 +23,7 @@ class CreateAreaProductTable extends Migration
          ->on('areas')
          ->onDelete('cascade');
          $table->foreign('product_id')
-         ->references('product_id')
+         ->references('id')
          ->on('products')
          ->onDelete('cascade');
         

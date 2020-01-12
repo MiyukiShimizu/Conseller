@@ -56,6 +56,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{url('/mr/login')}}">MRログイン</a>
                         <a class="dropdown-item" href="{{url('/mr_apply')}}">MR情報登録（初めての方）</a>
+                        <a class="dropdown-item" href="{{url('/report_apply')}}">営業レポート登録</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -252,7 +253,7 @@
  
      infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
          content: '<div class="map">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
-       });
+              });
  
      markerEvent(i); // マーカーにクリックイベントを追加
  }
@@ -277,61 +278,68 @@ function markerEvent(i) {
         <div class="container">
             <div class="content-section-heading text-center">
                 <h3 class="text-secondary mb-0">News</h3>
-                <h2 class="mb-5">最近の状況</h2>
+                <h2 class="mb-5">現在の状況</h2>
             </div>
-            <div class="row no-gutters">
-            <!-- ファイルを直接読み込む -->
-             <script src='./PATH/Chart.min.js'></script>
-             <!-- CDNとして読み込む -->
-             <script src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js'></script>
+            <p class="lead mb-5 text-center">契約数が5製品を越えた領域から営業を開始します。</p>
 
-             <!-- グラフ描画の要素とグラフ設定のスクリプト -->
-             <canvas id="myChart"></canvas>
-             <script>
-             var ctx = document.getElementById("myChart").getContext('2d');
-             var myBarChart_02 = new Chart(ctx, {
-                 type: 'bar',
-                 data: {
-                    labels: ["内科", "消化器外科", "整形外科", "小児科", "看護部"],
-                    datasets: [{
-                        data: [2, 6, 5, 3, 4],
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
-                    }]
-                    options: {
-                    scales: {
-                    yAxes: [{
-                        ticks: {
-                         beginAtZero:true,
-                         fontColor: '#000',
-                         fontSize: 12,
-                         fontWeight: 'bold',
-                         max: 10
-                        },
-                        gridLines: {
-                         color: '#ddd',
-                         borderDash: [5,5],
-                         lineWidth: 1,
-                         zeroLineWidth: 2,
-                         zeroLineColor: '#444',
-                         drawTicks: false
-                        }
-                    }],
-                    xAxes: [{
-                       ticks: {
-                       fontColor: '#000',
-                       fontSize: 12,
-                       fontWeight: 'bold'
-                       },
-                       gridLines: {
-                       display: false
-                       }
-                    }],
-      }
-    }
-                 }};
-            </script>
+    <div style="width: 50%">
+    <canvas id="chart" height="600" width="1000" class="graph"></canvas>
+     </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+        <script>
+          var barChartData = {
+            labels : ["内科", "消化器外科", "整形外科", "小児科", "看護部"],
+            datasets : [
+            {
+            fillColor : /*"#7fc2ef"*/"rgba(127,194,239,0.7)",
+            strokeColor : /*"#7fc2ef"*/"rgba(127,194,239,0.7)",
+            highlightFill : /*"#a5d1f4"*/"rgba(165,209,244,0.7)",
+            highlightStroke : /*"#a5d1f4"*/"rgba(165,209,244,0.7)",
+            data : [2, 6, 5, 3, 4]
+             }
+            ]
+
+            // options: {                             //◆オプション
+            // scales: {                          //軸設定
+            //     yAxes: [{                      //y軸設定
+            //         display: true,             //表示設定
+            //         scaleLabel: {              //軸ラベル設定
+            //            display: true,          //表示設定
+            //            labelString: '各診療科における契約製品数',  //ラベル
+            //            fontSize: 18               //フォントサイズ
+            //         },
+            //         ticks: {                      //最大値最小値設定
+            //             min: 0,                   //最小値
+            //             max: 10,                  //最大値
+            //             fontSize: 18,             //フォントサイズ
+            //             stepSize: 2               //軸間隔
+            //         },
+            //     }],
+            //     xAxes: [{                         //x軸設定
+            //         display: true,                //表示設定
+            //         barPercentage: 10,           //棒グラフ幅
+            //         categoryPercentage: 10,      //棒グラフ幅
+            //         scaleLabel: {                 //軸ラベル設定
+            //            display: true,             //表示設定
+            //            fontSize: 18               //フォントサイズ
+            //         },
+            //         ticks: {
+            //             fontSize: 18             //フォントサイズ
+            //         },
+            //     }],
+            // },
+            // }
+            }
+
+         window.onload = function(){
+         var ctx = document.getElementById("chart").getContext("2d");
+         window.myBar = new Chart(ctx).Bar(barChartData, {
+         responsive : true,
+            // アニメーションを停止させる場合は下記を追加
+        animation : false
+         });
+        }
+        </script>
 
             </div>
         </div>

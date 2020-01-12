@@ -25,7 +25,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/company/{id}/company_mypage';
+    protected $redirectTo = '/company/company_mypage';
     /**
      * Create a new controller instance.
      *
@@ -42,11 +42,6 @@ class RegisterController extends Controller
     //     return $request["name"];
     // }
 
-    public function register()
-    {
-        return redirect('company/{id}/company_mypage'); 
-    }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -57,7 +52,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:companies'], // companiesテーブに変更
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'], // companiesテーブに変更
             'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
     }

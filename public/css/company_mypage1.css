@@ -226,6 +226,7 @@ ul.contact li a:before
     color: black;
     font-size: 16;
     margin-left: auto;
+
 }
 
 .btn2
@@ -236,11 +237,9 @@ ul.contact li a:before
     font-size: 16;
 }
 
-/* なぜ、右に寄らないのだろう。 */
 .btn-logout{
     /* position: relative; */
     width: 50px;
-    margin-left: auto;
 }
 
 .button

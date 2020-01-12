@@ -52,9 +52,9 @@ return [
             'provider' => 'admins',
         ],
 
-        'mr' => [
+        'loginmr' => [
             'driver' => 'session',
-            'provider' => 'mrs',
+            'provider' => 'loginmrs',
         ],
     ],
 
@@ -138,6 +138,6 @@ return [
     |
     */
 
-    'password_timeout' => 10800,
+    'password_timeout' => 1800,
 
 ];

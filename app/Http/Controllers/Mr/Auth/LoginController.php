@@ -1,6 +1,6 @@
 <?php
-namespace App\Http\Controllers\Loginmr\Auth;
-use App\Http\Controllers\Loginmr\Auth;
+namespace App\Http\Controllers\Mr\Auth;
+use App\Http\Controllers\Mr\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/mr/{id}/mr_mypage';
+    protected $redirectTo = '/mr/mr_mypage';
     /**
      * Create a new controller instance.
      *
@@ -40,6 +40,6 @@ class LoginController extends Controller
     public function logout(Request $request){
         $this->guard()->logout();
         $request->session()->invalidate();
-        return $this->loggedOut($request) ?: redirect('mr/home');  // ログアウト後のリダイレクト先
+        return $this->loggedOut($request) ?: redirect('/');  // ログアウト後のリダイレクト先
 }
 }

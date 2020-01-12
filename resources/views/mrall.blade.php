@@ -1,12 +1,13 @@
 <h1 class="title">MR一覧</h1>
+<a href="admin/home" class="button">管理ページに戻る</a>
 <link href="css/companyall.css" rel="stylesheet" type="text/css"> 
 <div style="height:450px; width:auto; overflow-x:scroll; overflow-y:scroll;">
 
 <table>
 <tr>
    <th>MR ID</th><th>氏名</th><th>住所</th><th>電話</th><th>メールアドレス</th><th>営業先</th><th>営業エリア</th><th>登録日</th>
+</tr>
 @foreach ($mrs as $mr);
-<tr>
 <!-- MR一覧 -->
 <tr>
 <td class= "table-text">
@@ -28,7 +29,7 @@
   <div>{{ $mr["mr_tel"]}}
      <input type="hidden" name="mr_tel" value="{{$mr['mr_tel']}}">
   </div>
-<td>
+</td>
 <td class= "table-text">
   <div>{{ $mr["mr_mail"]}}
      <input type="hidden" name="mr_mail" value="{{$mr['mr_mail']}}">
@@ -43,10 +44,11 @@
 
 <!-- 修正ボタン -->
 <td>
-  <a href="{{ url('mrall/edit/'.$mr->mr_id)}}">
+<form action="{{ url('mrall/edit/'.$mr->mr_id)}}">
+ <button type="submit" class="btn-update">
     修正
-</a>
-
+    </button>
+</form>
 </td>
 
 <!-- 削除ボタン -->

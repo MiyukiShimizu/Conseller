@@ -89,8 +89,10 @@ class CompanyController extends Controller
         return view('company/company_mypage');
     }
 
+// 企業に紐づいている製品を表示する。
     public function companyindexProduct (){
-        $product_name = Company::find(1)->products()->get();
+        $products = Company::find(1)->products()->get();
+        var_dump;
         return view('company_productall', compact('products'));
         }
 

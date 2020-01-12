@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Loginmr\Auth;
+namespace App\Http\Controllers\Mr\Auth;
 use App\Loginmr;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -23,7 +23,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/mr/{id}/mr_mypage';
+    protected $redirectTo = '/mr/mr_mypage';
     /**
      * Create a new controller instance.
      *
@@ -40,16 +40,11 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
 
-    public function register()
-    {
-        return redirect('mr/{id}/mr_mypage'); 
-    }
-
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:mrs'], // mrsテーブに変更
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:loginmrs'], // mrsテーブに変更
             'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
     }
