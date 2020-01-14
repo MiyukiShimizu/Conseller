@@ -41,8 +41,7 @@
 		<div id="banner">
 			<div class="title">
 				<h2>企業登録情報</h2>
-				<a href="company_apply" class="button">企業情報を登録する（初回のみ）</a>
-				<a href="company_applyinfo" class="button">登録した企業登録情報を見る</a>
+				<a href="company_applyinfo" class="button">登録した企業情報を見る</a>
             </div>
         </div>
 	</div>

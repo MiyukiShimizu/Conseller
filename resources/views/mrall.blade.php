@@ -5,7 +5,7 @@
 
 <table>
 <tr>
-   <th>MR ID</th><th>氏名</th><th>住所</th><th>電話</th><th>メールアドレス</th><th>営業先</th><th>営業エリア</th><th>登録日</th>
+   <th>MR ID</th><th>氏名</th><th>住所</th><th>電話</th><th>メールアドレス</th><th>登録日</th><th>修正</th><th>削除</th>
 </tr>
 @foreach ($mrs as $mr);
 <!-- MR一覧 -->
@@ -36,11 +36,11 @@
   </div>
 </td>
 <td class= "table-text">
-  <div>{{ $mr["timestamps"]}}
-     <input type="hidden" name="timestamps" value="{{$mr['timestamps']}}">
+  <div>{{ $mr["created_at"]}}
+     <input type="hidden" name="timestamps" value="{{$mr['created_at']}}">
   </div>
 </td>
-</tr>
+
 
 <!-- 修正ボタン -->
 <td>

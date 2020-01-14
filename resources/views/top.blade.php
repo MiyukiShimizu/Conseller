@@ -45,6 +45,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{url('/company/login')}}">企業ログイン</a>
                         <a class="dropdown-item" href="{{url('/company_apply')}}">企業情報登録（初めての方）</a>
+                        <a class="dropdown-item" href="{{url('/product_apply')}}">製品登録</a>
                     </div>
                 </li>
 

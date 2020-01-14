@@ -25,9 +25,6 @@
                    
                     {{ csrf_field() }}
 
-                        @if(session("errors"))
-                        {{session("errors")}}
-                        @endif
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>

@@ -24,8 +24,7 @@
 		<div id="content">
 			<div class="title">
 				<h2>営業状況</h2>
-				<span class="byline">今月の営業状況</span>
-				<a href="mr_reportall" class="button">営業レポート参照</a>
+				<a href="/mr_reportall" class="button">営業レポート参照</a>
             </div>
          </div>
 	</div>
@@ -33,7 +32,7 @@
 		<div id="banner" class="container">
 			<div class="box-left">
 				<h2>担当製品</h2>
-				<a href="mr_productall" class="button">担当製品一覧</a>
+				<a href="/mr_productall" class="button">担当製品一覧</a>
 			</div>
 		</div>
 	</div>
@@ -41,7 +40,7 @@
 		<div id="banner">
 			<div class="title">
 				<h2>MR登録情報</h2>
-				<a href="mr_applyinfo" class="button">MR登録情報を見る</a>
+				<a href="/mr_applyinfo" class="button">登録したMR情報を見る</a>
             </div>
         </div>
 	</div>

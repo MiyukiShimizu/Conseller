@@ -16,6 +16,7 @@
 <div id="wrapper">
 	<div id="page" class="container">
 <h1 class="title">登録製品一覧</h1>
+<a href="mr/mr_mypage" class="button">MRマイページに戻る</a>
 <div style="height:450px; width:auto; overflow-x:scroll; overflow-y:scroll;">
 <table>
 <tr>
@@ -50,6 +51,7 @@
      <input type="hidden" name="product_distributor" value="{{$product['product_distributor']}}">
   </div>
 </td>
+</tr>
 
 @endforeach
 </table>
