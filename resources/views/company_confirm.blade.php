@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<form action='/company_store' method="POST" id="mail_form">
+<form action='/public/company_store' method="POST" id="mail_form">
     {{ csrf_field() }}	
 
 <h1 class="title">企業登録内容確認</h1>

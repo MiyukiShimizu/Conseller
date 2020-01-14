@@ -10,12 +10,17 @@
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1>企業マイページ</h1>
-			<form action="{{route('company.logout')}}" method="POST">
-			{{csrf_field()}}
-    		<button id="btn-logout" class="btn btn-danger">企業ログアウト</button>
-			</form>
+			<h1>管理者用ページ</h1> 
 		</div>
+		<form action="{{route('admin.logout')}}" method="POST">
+        {{csrf_field()}}
+        <button id="btn-logout" class="btn2 btn-danger">管理者ログアウト</button>
+        </form>
+
+            <!-- <form action="{{route('company.logout')}}" method="POST">
+            {{csrf_field()}}
+            <button id="btn-logout" class="btn btn-danger">企業ログアウト</button>
+            </form> -->
 	</div>
 </div>
 <div id="featured">&nbsp;</div>
@@ -24,29 +29,35 @@
 		<div id="content">
 			<div class="title">
 				<h2>営業状況</h2>
-				<a href="public/company_reportall" class="button">営業レポート参照</a>
             </div>
+            <a href="/reportall" class="button">営業レポート一覧参照</a>
          </div>
 	</div>
 	<div id="banner-wrapper">
 		<div id="banner" class="container">
 			<div class="box-left">
-				<h2>登録製品</h2>
-				<a href="public/product_apply" class="button">製品を登録する</a>
-				<a href="public/company_productall" class="button">登録製品一覧</a>
+				<h2>企業一覧</h2>
+				<a href="/companyall" class="button">企業一覧参照</a>
 			</div>
 		</div>
 	</div>
     <div id="page" class="container2">
 		<div id="banner">
 			<div class="title">
-				<h2>企業登録情報</h2>
-				<a href="public/company_applyinfo" class="button">登録した企業情報を見る</a>
+				<h2>製品一覧</h2>
+				<a href="/productall" class="button">製品一覧参照</a>
             </div>
         </div>
 	</div>
+	<div id="banner-wrapper">
+		<div id="banner" class="container">
+			<div class="box-left">
+				<h2>MR一覧</h2>
+				<a href="/mrall" class="button">MR一覧参照</a>
+			</div>
+		</div>
+	</div>
 </div>
-
 </body>
 </html>
 

@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- 登録した後、product_confirmページに行く-->
-<form action='public/product_confirm' method="POST" id="mail_form">
+<form action='product_confirm' method="POST" id="mail_form">
     {{ csrf_field() }}   
 <h1 class="title">製品登録フォーム</h1>
 	<dl>

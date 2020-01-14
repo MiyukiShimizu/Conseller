@@ -6,7 +6,7 @@
 	<div id="header" class="container">
 		<div id="logo">
 			<h1>企業マイページ</h1>
-			<a href="public/company/company_mypage" class="button">マイページ ホームに戻る</a>
+			<a href="company/company_mypage" class="button">マイページ ホームに戻る</a>
 		</div>
 	</div>
 </div>

@@ -15,7 +15,7 @@
 		</div>
 		<div id="menu">
 			<ul>
-				<li class="current_page_item"><a href="mr_mypage" accesskey="1" title="">MRマイページ ホームに戻る</a></li>
+				<li class="current_page_item"><a href="public/mr_mypage" accesskey="1" title="">MRマイページ ホームに戻る</a></li>
 			</ul>
 		</div>
 	</div>
@@ -30,9 +30,9 @@
 <tr>
    <th>レポートID</th><th>MR名</th><th>訪問日</th><th>病院名</th><th>診療科名</th><th>製品名</th><th>コメント</th><th>販売数</th><th>販売単価</th><th>登録日</th>
 @foreach ($reports as $report);
-<tr>
+</tr>
 <!-- レポート一覧 -->
-<tr>
+<!-- <tr>
 <td class= "table-text">
   <div>{{ $report["report_id"]}}
      <input type="hidden" name="report_id" value="{{$report['report_id']}}">
@@ -83,18 +83,18 @@
      <input type="hidden" name="timestamps" value="{{$company['timestamps']}}">
   </div>
 </td>
-</tr>
+</tr> -->
 
 <!-- 修正ボタン -->
-<td>
+<!-- <td>
   <a href="{{ url('reportall/edit/'.$report->report_id)}}">
     修正
 </a>
 
-</td>
+</td> -->
 
 <!-- 削除ボタン -->
-<td>
+<!-- <td>
   <form action="{{url('reportall/delete/'. $report->report_id)}}" method=POST>
   {{csrf_field()}}
   {{method_field('DELETE')}}
@@ -103,9 +103,9 @@
   削除
   </button>
 </form>
-</td>
+</td> -->
 
-</tr>
+<!-- </tr> -->
 @endforeach
 </table>
 </div>

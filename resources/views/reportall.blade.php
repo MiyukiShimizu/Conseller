@@ -1,5 +1,5 @@
 <h1 class="title">営業レポート一覧</h1>
-<a href="admin/home" class="button">管理ページに戻る</a>
+<a href="public/admin/home" class="button">管理ページに戻る</a>
 <link href="css/reportall.css" rel="stylesheet" type="text/css"> 
 
 <div style="height:450px; width:auto; overflow-x:scroll; overflow-y:scroll;">
@@ -64,7 +64,7 @@
 
 <!-- 修正ボタン -->
 <td>
-<form action="{{ url('reportall/edit/'.$report->report_id)}}">
+<form action="{{ url('public/reportall/edit/'.$report->report_id)}}">
 <button type="submit" class="btn-update">
     修正
 </button>
@@ -74,7 +74,7 @@
 
 <!-- 削除ボタン -->
 <td>
-  <form action="{{url('reportall/delete/'. $report->report_id)}}" method=POST>
+  <form action="{{url('public/reportall/delete/'. $report->report_id)}}" method=POST>
   {{csrf_field()}}
   {{method_field('DELETE')}}
   <input type="hidden" name="report_id" value="{{$report['report_id']}}">

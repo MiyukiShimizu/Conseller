@@ -1,15 +1,29 @@
-<form action="{{url('/public/reportall/update/'. $report->report_id)}}" method="POST">
+<head>
+
+<style>
+    body {
+	color: #454545;
+	background: #f0f0f0;
+    }
+</style>
+
+<link rel="stylesheet" href="css/report_apply.css"> 
+
+</head>
+<body>
+<!-- 登録した後、report_storeページに行く-->
+<form action='/report_store' method="POST" id="mail_form">
     {{ csrf_field() }}   
-<h1 class="title">営業レポート編集</h1>
+<h1 class="title">営業レポート内容確認</h1>
 	<dl>
 		<dt>氏名<span>MR Name</span></dt>
 		<dd class="required"><input type="text" id="report_name" name="report_name" value="{{$report['report_name']}}" /></dd>
 		
 		<dt>訪問日<span>visit Date</span></dt>
-		<dd class="required"><input type="text" id="report_date" name="report_date" value="{{$report['report_date']}" /></dd>
+		<dd class="required"><input type="text" id="report_date" name="report_date" value="{{$report['report_date']}}" /></dd>
 
-		<dt>病院名<span>Hospital name</span></dt>
-		<dd><input type="text" id="report_hospital" name="report_hospital" value="{{$report['report_hospital']}}" /> </dd>
+		<dt>病院名<span>Hospital</span></dt>
+		<dd class="required"><input type="text" id="report_hospital" name="report_hospital" value="{{$report['report_hospital']}}" /></dd>
 		
 		<dt>診療科名<span>Department</span></dt>
 		<dd><input type="text" id="report_department" name="report_department" value="{{$report['report_department']}}" /> </dd>
@@ -28,13 +42,6 @@
 	    </dd>
 	</dl>
 	
-   <!-- id値を送信 -->
-    <input type="hidden" name="report_id" value="{{$report['report_id']}}">	
-    <p id="form_submit"><input type="submit" id="form_submit_button" value="保存 Save" /></p>
-    <a class="btn btn-link pull-right" href="">
-    戻る
-    </a>
-
-
+    <p id="form_submit"><input type="submit" class="form_submit_button" value="登録 Register" /></p>
 </form>
 

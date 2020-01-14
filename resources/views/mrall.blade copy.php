@@ -1,5 +1,5 @@
 <h1 class="title">MR一覧</h1>
-<a href="admin/home" class="button">管理ページに戻る</a>
+<a href="public/admin/home" class="button">管理ページに戻る</a>
 <link href="css/companyall.css" rel="stylesheet" type="text/css"> 
 <div style="height:450px; width:auto; overflow-x:scroll; overflow-y:scroll;">
 
@@ -44,7 +44,7 @@
 
 <!-- 修正ボタン -->
 <td>
-<form action="{{ url('public/mrall/edit/'.$mr->mr_id)}}">
+<form action="{{ url('mrall/edit/'.$mr->mr_id)}}">
  <button type="submit" class="btn-update">
     修正
     </button>
@@ -53,7 +53,7 @@
 
 <!-- 削除ボタン -->
 <td>
-  <form action="{{url('public/mrall/delete/'. $mr->mr_id)}}" method=POST>
+  <form action="{{url('mrall/delete/'. $mr->mr_id)}}" method=POST>
   {{csrf_field()}}
   {{method_field('DELETE')}}
   <input type="hidden" name="mr_id" value="{{$mr['mr_id']}}">

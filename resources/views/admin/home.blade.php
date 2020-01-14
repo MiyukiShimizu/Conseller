@@ -17,10 +17,6 @@
         <button id="btn-logout" class="btn2 btn-danger">管理者ログアウト</button>
         </form>
 
-            <!-- <form action="{{route('company.logout')}}" method="POST">
-            {{csrf_field()}}
-            <button id="btn-logout" class="btn btn-danger">企業ログアウト</button>
-            </form> -->
 	</div>
 </div>
 <div id="featured">&nbsp;</div>
@@ -30,14 +26,14 @@
 			<div class="title">
 				<h2>営業状況</h2>
             </div>
-            <a href="/reportall" class="button">営業レポート一覧参照</a>
+            <a href="/public/reportall" class="button">営業レポート一覧参照</a>
          </div>
 	</div>
 	<div id="banner-wrapper">
 		<div id="banner" class="container">
 			<div class="box-left">
 				<h2>企業一覧</h2>
-				<a href="/companyall" class="button">企業一覧参照</a>
+				<a href="/public/companyall" class="button">企業一覧参照</a>
 			</div>
 		</div>
 	</div>
@@ -45,7 +41,7 @@
 		<div id="banner">
 			<div class="title">
 				<h2>製品一覧</h2>
-				<a href="/productall" class="button">製品一覧参照</a>
+				<a href="/public/productall" class="button">製品一覧参照</a>
             </div>
         </div>
 	</div>
@@ -53,7 +49,7 @@
 		<div id="banner" class="container">
 			<div class="box-left">
 				<h2>MR一覧</h2>
-				<a href="/mrall" class="button">MR一覧参照</a>
+				<a href="/public/mrall" class="button">MR一覧参照</a>
 			</div>
 		</div>
 	</div>

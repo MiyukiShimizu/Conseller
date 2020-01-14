@@ -1,4 +1,4 @@
-<form action="{{url('productall/update/'. $product->id)}}" method="POST">
+<form action="{{url('/public/productall/update/'. $product->id)}}" method="POST">
     {{ csrf_field() }}	
 	<h1 class="title">製品データ編集</h1>
 	<link href="css/company_apply.css" rel="stylesheet" type="text/css"> 

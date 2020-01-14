@@ -1,5 +1,5 @@
 <h1 class="title">製品一覧</h1>
-<a href="public/admin/home" class="button">管理ページに戻る</a>
+<a href="admin/home" class="button">管理ページに戻る</a>
 <link href="css/productall.css" rel="stylesheet" type="text/css"> 
 
 <div style="height:450px; width:auto; overflow-x:scroll; overflow-y:scroll;">
@@ -66,7 +66,7 @@
 
 <!-- 修正ボタン -->
 <td>
-<form action="{{ url('public/productall/edit/'.$product->id)}}">
+<form action="{{ url('productall/edit/'.$product->id)}}">
  <button type="submit" class="btn-update">
   修正
   </button>
@@ -76,7 +76,7 @@
 
 <!-- 削除ボタン -->
 <td>
-  <form action="{{url('public/productall/delete/'. $product->id)}}" method=POST>
+  <form action="{{url('productall/delete/'. $product->id)}}" method=POST>
   {{csrf_field()}}
   {{method_field('DELETE')}}
   <input type="hidden" name="id" value="{{$product['id']}}">
