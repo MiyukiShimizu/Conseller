@@ -1,4 +1,4 @@
-<form action="{{url('/public/reportall/update/'. $report->report_id)}}" method="POST">
+<form action="{{url('public/reportall/update/'. $report->report_id)}}" method="POST">
     {{ csrf_field() }}   
 <h1 class="title">営業レポート編集</h1>
 	<dl>

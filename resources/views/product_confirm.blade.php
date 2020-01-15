@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<form action='/pubic/product_store' method="POST" id="mail_form">
+<form action='pubic/product_store' method="POST" id="mail_form">
     {{ csrf_field() }}	
 
 <h1 class="title">製品登録内容確認</h1>

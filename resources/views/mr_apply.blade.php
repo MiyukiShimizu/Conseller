@@ -13,7 +13,7 @@
 </head>
 <body>
 <!-- 登録した後、company_confirmページに行く-->
-<form action='/mr_confirm' method="POST" id="mail_form">
+<form action='public/mr_confirm' method="POST" id="mail_form">
     {{ csrf_field() }}   
 <h1 class="title">MR登録フォーム</h1>
 	<dl>
