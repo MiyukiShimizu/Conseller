@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- 登録した後、report_storeページに行く-->
-<form action='report_store' method="POST" id="mail_form">
+<form action='/public/report_store' method="POST" id="mail_form">
     {{ csrf_field() }}   
 <h1 class="title">営業レポート内容確認</h1>
 	<dl>

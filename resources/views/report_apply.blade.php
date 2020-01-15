@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- 登録した後、report_confirmページに行く-->
-<form action='/report_confirm' method="POST" id="mail_form">
+<form action='/public/report_confirm' method="POST" id="mail_form">
     {{ csrf_field() }}   
 <h1 class="title">営業レポート</h1>
 	<dl>
