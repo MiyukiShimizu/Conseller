@@ -64,7 +64,7 @@
 
 <!-- 修正ボタン -->
 <td>
-<form action="{{ url('public/reportall/edit/'.$report->report_id)}}">
+<form action="{{ url('reportall/edit/'.$report->report_id)}}">
 <button type="submit" class="btn-update">
     修正
 </button>
@@ -74,7 +74,7 @@
 
 <!-- 削除ボタン -->
 <td>
-  <form action="{{url('public/reportall/delete/'. $report->report_id)}}" method=POST>
+  <form action="{{url('reportall/delete/'. $report->report_id)}}" method=POST>
   {{csrf_field()}}
   {{method_field('DELETE')}}
   <input type="hidden" name="report_id" value="{{$report['report_id']}}">
